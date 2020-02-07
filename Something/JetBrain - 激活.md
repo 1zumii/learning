@@ -1,0 +1,2 @@
+- [注册码](http://idea.lanyus.com/)
+- [IntelliJ IDEA 2019激活码 永久破解](https://www.jianshu.com/p/7d60ea5e51e9)
