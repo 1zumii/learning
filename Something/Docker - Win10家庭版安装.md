@@ -3,14 +3,15 @@
 - [官方指导文档](https://docs.docker.com/toolbox/toolbox_install_windows/)
 - To download the latest version of Docker Toolbox, go to [Toolbox Releases](https://github.com/docker/toolbox/releases) and download the latest `.exe` file.
 - 参考指导：
-  1. [如何在windows安装docker toolbox - CSDN](https://blog.csdn.net/xbinworld/article/details/78945879)
-  2. [Windows Docker 安装 - runoob.com](https://www.runoob.com/docker/windows-docker-install.html)
+  - [如何在windows安装docker toolbox - CSDN](https://blog.csdn.net/xbinworld/article/details/78945879)
+  
+  - [Windows Docker 安装 - runoob.com](https://www.runoob.com/docker/windows-docker-install.html)
 
 #### 2.[解决docker-machine 初始化下载 book2docker.iso 过慢的问题](https://juejin.im/entry/5bec241ce51d455a175148fe)
 
 1. 先运行一次Docker Quickstart Terminal，使得目录出现
 
-   ./Users/<username>/.docker/machine/cache
+   `./Users/<username>/.docker/machine/cache`
 
 2. [下载 book2docker.iso（最新版本）](https://github.com/boot2docker/boot2docker/releases)
 
@@ -32,11 +33,11 @@
 
 2. 打开VirtualBox，选择“管理”菜单下的“虚拟介质管理”，我们可以看到Docker虚拟机用的虚拟硬盘的文件disk。
 
-3. 选中“disk”，然后点击菜单中的“复制”命令，根据向导，把当前的disk复制到另一个盘上面去。
+3. 选中 **disk** ，然后点击菜单中的`复制`命令，根据向导，把当前的disk复制到另一个盘上面去。
 
-4. 回到VirtualBox主界面，右键“default”这个虚拟机，选择“设置”命令，在弹出的窗口中选择“存储”选项。
+4. 回到VirtualBox主界面，右键`default`这个虚拟机，选择`设置`命令，在弹出的窗口中选择`存储`选项。
 
-5. 把disk从“控制器SATA”中删除，然后重新添加我们刚才复制到另外一个磁盘上的那个文件。
+5. 把disk从`控制器SATA`中删除，然后重新添加我们刚才复制到另外一个磁盘上的那个文件。
 
 6. 确定，回到PowerShell，我们使用`docker-machine start default`就可以启动新地址的Docker虚拟机了。确保新磁盘的虚拟机没有问题。就可以把C盘那个disk文件删除了。
 
@@ -56,7 +57,7 @@ docker-machine restart default
 3. 如果换源成功，执行`docker info`，可见
 
 > Registry Mirrors:
->  https://dockerhub.azk8s.cn/
+> 	https://dockerhub.azk8s.cn/
 
 国内很多云服务商都提供了国内加速器服务，例如：
 

@@ -61,13 +61,13 @@
 
 - [从远程库克隆](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375233990231ac8cf32ef1b24887a5209f83e01cb94b000)
 
-- - git clone
+  - git clone
 
     ![image-20200207230705923](image-20200207230705923.png)
 
 - [分支删除](https://blog.csdn.net/qq_32452623/article/details/54340749)
 
-- - `git branch -a`
+  - `git branch -a`
   - `git branch -d <BranchName>`
   - `git push origin --delete <BranchName>`
 
