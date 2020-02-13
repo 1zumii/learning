@@ -1,3 +1,7 @@
+[基础概念理解 - 知乎](https://zhuanlan.zhihu.com/p/53260098)
+
+[Docker命令大全 - Runoob.com](https://www.runoob.com/docker/docker-command-manual.html)
+
 #### 1.[Docker镜像](https://www.jikexueyuan.com/course/867_3.html?ss=1)
 
 - 查看镜像：`docker images`
@@ -37,12 +41,12 @@ $ docker run -itd ubuntu /bin/bash
 
 asus@DESKTOP...
 $ docker ps
-CONTAINER ID        IMAGE		COMMAND             CREATED             STATUS
+CONTAINER ID        IMAGE		COMMAND             CREATED             STATUS	...
 6e4889d44f4a        ubuntu		"/bin/bash"         5 seconds ago       Up 5 seconds
 
 asus@DESKTOP...
 $ docker ps -a
-CONTAINER ID        IMAGE		COMMAND             CREATED             STATUS
+CONTAINER ID        IMAGE		COMMAND             CREATED             STATUS	...
 6e4889d44f4a        ubuntu		"/bin/bash"         9 seconds ago       Up 9 seconds
 e1437bff1caa        ubuntu		"/bin/bash"         24 seconds ago      Exited (0) 24 seconds ago
 ```
@@ -69,7 +73,7 @@ e1437bff1caa        ubuntu		"/bin/bash"         24 seconds ago      Exited (0) 2
   - `-f`：查看容器的详细信息
 
     ```bash
-    $ docker inspect -f '{{.NetworkSettings.IPAdress}}' [ID]
+    $ docker inspect -f '{{.NetworkSettings.IPAddress}}' [ID]
     ```
 
 ##### 2.3.进入容器
@@ -87,3 +91,4 @@ e1437bff1caa        ubuntu		"/bin/bash"         24 seconds ago      Exited (0) 2
 - 删除容器：`docker rm [ID]`
   - `-f`：强制删除一个运行中的容器
   - [Docker 清理命令](https://www.runoob.com/w3cnote/docker-clear-command.html)
+
