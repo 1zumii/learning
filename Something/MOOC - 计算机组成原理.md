@@ -2,21 +2,21 @@
 
 ### 第四章 存储系统
 
-#### 4.1 存储系统的层次结构
+#### 4.1 [存储系统的层次结构](https://www.icourse163.org/learn/HUST-1003159001?tid=1206776230#/learn/content?type=detail&id=1211610884&sm=1)
 
 ##### 局部性原理
 
 - 时间局部性
 - 空间局部性
 
-#### 4.2 主存中的数据组织
+#### 4.2 [主存中的数据组织](https://www.icourse163.org/learn/HUST-1003159001?tid=1206776230#/learn/content?type=detail&id=1211610885&sm=1)
 
 ##### 字的边界对齐问题
 
 - 按边界对齐的数据存储
 - 未按边界对齐的数据存储
 
-#### 4.3 静态随机存储器 SRAM
+#### 4.3 [静态随机存储器 SRAM](https://www.icourse163.org/learn/HUST-1003159001?tid=1206776230#/learn/content?type=detail&id=1211610886&sm=1)
 
 ##### 三种状态
 
@@ -28,7 +28,7 @@
 
 ![双译码结构](image-20200309183316607.png)
 
-#### 4.4 动态随机存储器 DRAM
+#### 4.4 [动态随机存储器 DRAM](https://www.icourse163.org/learn/HUST-1003159001?tid=1206776230#/learn/content?type=detail&id=1211610887&sm=1)
 
 ##### SRAM存储单元的不足
 
@@ -54,7 +54,9 @@
 - 分散刷新
 - **异步刷新**
 
-#### 4.5 存储扩展
+#### 4.5 [存储扩展](https://www.icourse163.org/learn/HUST-1003159001?tid=1206776230#/learn/content?type=detail&id=1211610888&sm=1)
+
+
 
 
 
