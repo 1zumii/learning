@@ -27,10 +27,10 @@
 
 #### options.initialValue
 
-- 初次加载时给默认值应使用 options中的`initialValue`，而不是在 componentWillMount 中使用 setFieldsValue()
+- 初次加载时给默认值应使用 options 中的`initialValue`，而不是在 componentWillMount 中使用 `setFieldsValue()`
 
 #### options.getValueFromEvent
 
-- 可以把 onChange 的参数（如 event）转化为控件的值
+- 可以把`onChange`的参数（如 event）转化为控件的值
 - 即：将一个函数指定给此属性，函数的返回值作为当前 field 的 value
 
