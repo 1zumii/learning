@@ -136,3 +136,8 @@
 ![image-20200314123235555](image-20200314123235555.png)
 
 #### 4.8 [相联存储器](https://www.icourse163.org/learn/HUST-1003159001?tid=1206776230#/learn/content?type=detail&id=1211610892&cid=1214401742&replay=true)
+
+1. 作用：判断CPU要访问的内容是否在Cache中
+2. 基本思路：根据不同的规则抽取主存地址的`部分内容`作为查找依据
+
+#### 4.9 [Cache地址映射与变换方法](https://www.icourse163.org/learn/HUST-1003159001?tid=1206776230#/learn/content?type=detail&id=1211610893&cid=1214401745&replay=true)
