@@ -113,3 +113,26 @@
 - 多模块并行：局部性原理
 
 ![image-20200309205154221](image-20200309205154221.png)
+
+#### 4.7 [Cache的基本原理](https://www.icourse163.org/learn/HUST-1003159001?tid=1206776230#/learn/content?type=detail&id=1211610891&cid=1214401739&replay=true)
+
+1. 任何存在速度差异的地方都配置有`高速缓冲存储器`
+2. 功能：缓解快速CPU和慢速的主间的速度差异
+3. 理论基础：局部性原理
+4. CPU和Cache按`字`交换，Cache和主存按`块`交换
+
+##### Cache地址映射机制
+
+![image-20200314122827541](image-20200314122827541.png)
+
+##### Cache的结构
+
+- 每`行`大小与主存`块`相同
+- `Tag`：从CPU访问主存的地址中剥离得到
+- `Data`：与主存交换的**数据块**
+- `Valid`：是否有效
+- `Dirty`：是否最新（可能被DMA弄脏）
+
+![image-20200314123235555](image-20200314123235555.png)
+
+#### 4.8 [相联存储器](https://www.icourse163.org/learn/HUST-1003159001?tid=1206776230#/learn/content?type=detail&id=1211610892&cid=1214401742&replay=true)
