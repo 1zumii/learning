@@ -34,3 +34,19 @@
 - 可以把`onChange`的参数（如 event）转化为控件的值
 - 即：将一个函数指定给此属性，函数的返回值作为当前 field 的 value
 
+***
+
+#### Tips
+
+##### FormItem 里的嵌套复合组件
+
+使用 getFieldDecorator 注册的时候不应该将整个嵌套的组件注册，只注册其中控制 Field 取值的组件。
+
+以此避免`resetFields()`方法的失效和其他问题。
+
+![image-20200315130632729](image-20200315130632729.png)
+
+##### 自定义组件的注册与传值
+
+- `options.valuePropName`：设置在子组件中由 props 接收到的值
+- `this.props.onChange`：子组件中使用 props 传入的 onChange 函数，将此注册的子组件的value传给Form表单
