@@ -1,29 +1,29 @@
-#### 1.[composer](https://laravelacademy.org/post/4506.html)
+### 1.[composer](https://laravelacademy.org/post/4506.html)
 
 - [composer的使用](https://www.jianshu.com/p/6146949387e9)
 - [composer.phar 安装东西太慢](https://www.zhihu.com/question/24997679/answer/30703365)
 - [composer中文镜像 - learnku](https://learnku.com/composer/t/4484/composer-mirror-use-help)
 - [代替镜像](https://learnku.com/composer/wikis/30594)
 
-#### 2.[生命周期](https://learnku.com/docs/laravel/5.7/lifecycle/2248)
+### 2.[生命周期](https://learnku.com/docs/laravel/5.7/lifecycle/2248)
 
 - public/index.php
 - HTTP/Console 内核
 - provider(服务提供器)
 - 请求调度
 
-#### 3.[服务容器](https://learnku.com/docs/laravel/5.7/container/2249)
+### 3.[服务容器](https://learnku.com/docs/laravel/5.7/container/2249)
 
 - 依赖注入
 - 绑定
 - 解析实例
 
-#### 4.[服务提供器](https://learnku.com/docs/laravel/5.7/providers/2250)
+### 4.[服务提供器](https://learnku.com/docs/laravel/5.7/providers/2250)
 
 - 注册方法 register：将服务绑定到服务容器中
 - boot方法：在所有服务提供者被注册以后才会被调用
 
-#### 5.[配置信息](https://learnku.com/docs/laravel/5.7/configuration/2243)
+### 5.[配置信息](https://learnku.com/docs/laravel/5.7/configuration/2243)
 
 - .env文件中的所有变量都被解析为字符串
 
@@ -50,7 +50,7 @@
   - `php artisan down`
   - `php artisan up`
 
-#### 6.[Laravel的文件夹结构](https://learnku.com/docs/laravel/5.7/structure/2244)
+### 6.[Laravel的文件夹结构](https://learnku.com/docs/laravel/5.7/structure/2244)
 
 - 根目录
 
@@ -80,7 +80,7 @@
   - Providers
   - Rules
 
-#### 7.[路由入门](https://laravelacademy.org/post/9611.html)
+### 7.[路由入门](https://laravelacademy.org/post/9611.html)
 
 - 定义路由：
 
@@ -109,7 +109,7 @@
   - `->name('routeName')`
   - 通过辅助函数route()为该命名路由生成 URL 
 
-#### 8.[路由分组规则](https://laravelacademy.org/post/9612.html)
+### 8.[路由分组规则](https://laravelacademy.org/post/9612.html)
 
 - [底层原理 - 门面](https://laravelacademy.org/post/9536.html)
 
@@ -139,15 +139,15 @@
   - `Route::namespace()`
     - 默认的命名空间是 *App\Http\Controllers*
 
-#### 9.[控制器](https://laravelacademy.org/post/9614.html)
+### 9.[控制器](https://laravelacademy.org/post/9614.html)
 
 - 如果没有指定完整的命名空间，那么路由文件`web.php`中所有控制器都位于App\Http\Controllers命名空间下
 
-#### 10.[请求](https://learnku.com/docs/laravel/5.5/requests/1297)
+### 10.[请求](https://learnku.com/docs/laravel/5.5/requests/1297)
 
 - `use Illuminate\Http\Request;`
 
-#### 11.[日志](https://learnku.com/docs/laravel/5.7/logging/2264)
+### 11.[日志](https://learnku.com/docs/laravel/5.7/logging/2264)
 
 - 可以将一组上下文数组数据传递给日志方法
 
@@ -162,12 +162,12 @@
 
 - *./storage/logs/laravel.log* 
 
-#### 12.[数据库和 Eloquent ](https://laravelacademy.org/post/9692.html)
+### 12.[数据库和 Eloquent ](https://laravelacademy.org/post/9692.html)
 
 - 敏感信息都保存到.env文件
 - 配置多个数据库连接
 
-#### 13.[通过查询构建器实现简单的增删改查操作](https://laravelacademy.org/post/9697.html)
+### 13.[通过查询构建器实现简单的增删改查操作](https://laravelacademy.org/post/9697.html)
 
 - 原生Statement语句： `DB::statement(); `
 
@@ -207,7 +207,7 @@
 
   - 清空记录后重置自增ID：`->truncate()`
 
-#### 14.[通过查询构建器实现复杂的查询语句](https://laravelacademy.org/post/9698.html)
+### 14.[通过查询构建器实现复杂的查询语句](https://laravelacademy.org/post/9698.html)
 
 - Laravel自带的语法糖：
 
@@ -293,12 +293,12 @@
     - `->crossJoin()`
     - [SQL Join连接](https://www.runoob.com/sql/sql-join.html)：先确定一个主表作为结果集，然后，把其他表的行有选择性地join在主表结果集上。
 
-#### 15.[日期及时间处理包 ](https://9iphp.com/web/laravel/php-datetime-package-carbon.html)[Carbon](https://9iphp.com/web/laravel/php-datetime-package-carbon.html)
+### 15.[日期及时间处理包 ](https://9iphp.com/web/laravel/php-datetime-package-carbon.html)[Carbon](https://9iphp.com/web/laravel/php-datetime-package-carbon.html)
 
 - `Carbon::now();`
 - `Carbon::parse();`
 
-#### 16.[缓存系统](https://learnku.com/docs/laravel/5.7/cache/2278)
+### 16.[缓存系统](https://learnku.com/docs/laravel/5.7/cache/2278)
 
 - `use Illuminate\Support\Facades\Cache;`
 - 获取：`Cache::get('key');`
