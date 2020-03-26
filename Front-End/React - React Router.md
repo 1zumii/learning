@@ -2,7 +2,7 @@
 2. [React Router 使用总结 - 掘金](https://juejin.im/post/5a6a9a7c51882573264703b0)
 3. [你不知道的 React Router 4 - ZhiHu](https://zhuanlan.zhihu.com/p/28585911)
 
-#### 1. `<Route>`
+#### 1. \<Route>
 
 - `<component>`
 
@@ -42,13 +42,13 @@
   -  一个包含着`pathname`被`path-to-regexp`捕获的对象
   - 接收到的是 **string** 类型
 
-#### 3. `<Link>`
+#### 3. \<Link\>
 
 - 作用：接受点击然后触发地址 url 的变更
 - `<a>`：载入一整个新的页面
 - `<Link>` ：URL 将会更新，页面不载入整个新页面（并渲染内容）
 
-#### 4. [`<Switch>`](https://www.jianshu.com/p/ed5e56994f13)
+#### 4. [\<Switch>](https://www.jianshu.com/p/ed5e56994f13)
 
 - 功能：
 
