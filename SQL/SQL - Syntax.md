@@ -1,11 +1,11 @@
-#### 1.[SQL 语法入门 - jikexueyuan.com](http://wiki.jikexueyuan.com/project/sql/rdbms-concepts.html)
+### 1.[SQL 语法入门 - jikexueyuan.com](http://wiki.jikexueyuan.com/project/sql/rdbms-concepts.html)
 
-#### 2.MySQL
+### 2.MySQL
 
 - MySQL安装位置\MySQL Server 8.0\bin
 - 运行命令：`mysql -u root –p` (登录数据库)
 
-#### 3.数据库Database
+### 3.数据库Database
 
 - 创建数据库：`CREATE DATABASE;`
 
@@ -20,7 +20,7 @@
 
 - 删除数据库：`DROP DATABASE [IF EXISTS]<DatabaseName>;`
 
-#### 4.表[^Table]
+### 4.表[^Table]
 
 - 显示所有的表：`SHOW TABLES;`
 
@@ -41,7 +41,7 @@
 
   创建与department表相同结构的表department1，并将departName设为主键，departmentID上建立一个索引，并不插入旧表数据
 
-#### 5.索引[^Index]
+### 5.索引[^Index]
 
 - 创建索引
 
@@ -62,11 +62,11 @@
 
 - [在创建数据表时创建索引](https://blog.csdn.net/qq_41573234/article/details/80250279)
 
-#### 6.存储过程[^Stored Procedure]
+### 6.存储过程[^Stored Procedure]
 
 - [MySQL存储过程 - runoob.com](https://www.runoob.com/w3cnote/mysql-stored-procedure.html)
 - [MySQL数据库存储过程 - CSDN](https://blog.csdn.net/moxigandashu/article/details/64616135)
 
-#### 7.触发器[^Trigger]
+### 7.触发器[^Trigger]
 
 - [触发器 - cnBlog](https://www.cnblogs.com/CraryPrimitiveMan/p/4206942.html)
