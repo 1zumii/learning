@@ -1,7 +1,7 @@
-1. [参考 1](https://segmentfault.com/a/1190000011853970)
-2. [参考 2](https://segmentfault.com/a/1190000011854066)
+1. [原文链接](https://segmentfault.com/a/1190000011853970)
+2. [JS中的隐式转换](https://segmentfault.com/a/1190000011854066)
 
-#### 举例
+#### 特例
 
 ```javascript
 String([])       // ""
@@ -35,6 +35,26 @@ Number(false)    // 0
 #### 问题
 
 ```javascript
-'1' == []	// true
+[] == true	// false
 ```
 
+- `true`转为 1 -> 规则3
+- `[]`转为 0 -> 特例1-2
+- `0 == 1` -> false
+
+```javascript
+![] == []	// true
+```
+
+- `![]`转为 false -> 特例1-3
+- false 转为 0 -> 规则3
+- `[]` 转为 0 -> 特例1-2
+
+```javascript
+'1' == []	// false
+```
+
+*个人想法*
+
+- `[]`转为 ''
+- '1' == '' -> false
