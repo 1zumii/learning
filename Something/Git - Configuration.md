@@ -1,6 +1,6 @@
-#### 1.[基本的Git概念](https://www.jianshu.com/p/df4f947d99e9)
+### 1.[基本的Git概念](https://www.jianshu.com/p/df4f947d99e9)
 
-#### 2.[Git 工作区、暂存区和版本库](http://www.runoob.com/git/git-workspace-index-repo.html)
+### 2.[Git 工作区、暂存区和版本库](http://www.runoob.com/git/git-workspace-index-repo.html)
 
 - 工作区：就是你在电脑里能看到的目录
 - 暂存区：（stage / index）一般存放在`.git`目录下的index文件（.git/index）中
@@ -9,7 +9,7 @@
 
 ![image-20200207230320571](image-20200207230320571.png)
 
-#### 3.[Git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+### 3.[Git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 - 创建版本库
 
@@ -71,16 +71,16 @@
   - `git branch -d <BranchName>`
   - `git push origin --delete <BranchName>`
 
-#### 4.[Git与TortoiseGit基本操作 ](https://blog.csdn.net/renfufei/article/details/41647973)
+### 4.[Git与TortoiseGit基本操作 ](https://blog.csdn.net/renfufei/article/details/41647973)
 
-#### 5.[生成/添加SSH公钥(gitee)](https://gitee.com/help/articles/4181#article-header0)
+### 5.[生成/添加SSH公钥(gitee)](https://gitee.com/help/articles/4181#article-header0)
 
 ![image-20200207230755400](image-20200207230755400.png)
 
-#### 6.[使用Git将码云上的代码Clone至本地](https://www.cnblogs.com/yi0921/p/7928985.html)
+### 6.[使用Git将码云上的代码Clone至本地](https://www.cnblogs.com/yi0921/p/7928985.html)
 
 Clone项目：找到项目的SSH地址，命令行输入 $ git clone "SSH地址"，完毕之后项目将会被Clone至选择的目录下。
 
-#### 7.[集中式和分布式](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374027586935cf69c53637d8458c9aec27dd546a6cd6000)
+### 7.[集中式和分布式](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374027586935cf69c53637d8458c9aec27dd546a6cd6000)
 
 CVS及SVN都是集中式的版本控制系统，而Git是分布式版本控制系统
