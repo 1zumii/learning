@@ -1,4 +1,4 @@
-#### Example
+### Example
 
 ```python
 if '1111'>'2':
@@ -7,11 +7,11 @@ else:
     print('1111<2')
 ```
 
-#### Console
+### Console
 
 > 1111<2
 
-#### Solution
+### Solution
 
 | Code                    | Description                                         |
 | ----------------------- | --------------------------------------------------- |

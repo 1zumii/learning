@@ -1,4 +1,4 @@
-#### 1.下载Docker Toolbox for Windows
+### 1.下载Docker Toolbox for Windows
 
 - [官方指导文档](https://docs.docker.com/toolbox/toolbox_install_windows/)
 - To download the latest version of Docker Toolbox, go to [Toolbox Releases](https://github.com/docker/toolbox/releases) and download the latest `.exe` file.
@@ -7,7 +7,7 @@
   
   - [Windows Docker 安装 - runoob.com](https://www.runoob.com/docker/windows-docker-install.html)
 
-#### 2.[解决docker-machine 初始化下载 book2docker.iso 过慢的问题](https://juejin.im/entry/5bec241ce51d455a175148fe)
+### 2.[解决docker-machine 初始化下载 book2docker.iso 过慢的问题](https://juejin.im/entry/5bec241ce51d455a175148fe)
 
 1. 先运行一次Docker Quickstart Terminal，使得目录出现
 
@@ -17,7 +17,7 @@
 
 3. 下好的.iso放入目录下，重新运行Docker Quickstart Terminal
 
-#### 3.[解决点击Docker出现windows 正在查找bash.exe的问题](https://blog.csdn.net/A632189007/article/details/78601213)
+### 3.[解决点击Docker出现windows 正在查找bash.exe的问题](https://blog.csdn.net/A632189007/article/details/78601213)
 
 由于安装时未勾选`Git for windows`，需要手动查找Git bash的位置。
 
@@ -25,7 +25,7 @@
 
 ![image-20200204233451068](image-20200204233451068.png)
 
-#### 4.[Docker虚拟机文件地址修改](https://blog.csdn.net/chengly0129/article/details/68947265)
+### 4.[Docker虚拟机文件地址修改](https://blog.csdn.net/chengly0129/article/details/68947265)
 
 默认情况下，`docker-machine`创建的虚拟机文件，是保存在C盘的`C:\Users\用户名\.docker\machine\machines\default` 目录下的，如果下载和使用的镜像过多，那么必然导致该文件夹膨胀过大，如果C盘比较吃紧，那么我们就得考虑把该虚拟机移到另一个盘上。具体操作如下：
 
@@ -41,7 +41,7 @@
 
 6. 确定，回到PowerShell，我们使用`docker-machine start default`就可以启动新地址的Docker虚拟机了。确保新磁盘的虚拟机没有问题。就可以把C盘那个disk文件删除了。
 
-#### 5.[Docker toolbox换源](https://www.jianshu.com/p/7a6a5badb603)
+### 5.[Docker toolbox换源](https://www.jianshu.com/p/7a6a5badb603)
 
 1. 运行 Docker Quickstart Terminal
 

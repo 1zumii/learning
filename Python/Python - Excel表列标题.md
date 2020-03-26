@@ -1,20 +1,20 @@
-#### 题目
+### 题目
 
 给定一个正整数，返回相应的列标题，如Excel表中所示。
 
-##### Example 1
+#### Example 1
 
 Input: 28
 
 Output: "AB"
 
-##### Example 2
+#### Example 2
 
 Input: 29
 
 Output: "AC"
 
-##### 注意事项
+#### 注意事项
 
 1 -> A
 
@@ -30,7 +30,7 @@ Output: "AC"
 
 28 -> AB
 
-#### 解
+### 解
 
 ```python
 class Solution:

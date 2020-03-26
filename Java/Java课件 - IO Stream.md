@@ -1,6 +1,6 @@
 ![](image-20200129162559961.png)
 
-#### 1.File类的构造方法
+### 1.File类的构造方法
 
 ```java
 //在当前目录下创建一个与aaa.txt文件名相关联的文件对象
@@ -9,7 +9,7 @@ File f1 = new File("aaa.txt");
 File f2 = new File("D:\\Java\\Hello.java");
 ```
 
-#### 2.File类中的常用方法
+### 2.File类中的常用方法
 
 | 方法原型                                           | 说明                                                         |
 | -------------------------------------------------- | ------------------------------------------------------------ |
@@ -22,7 +22,7 @@ File f2 = new File("D:\\Java\\Hello.java");
 | boolean createNewFile()<br/>throws IOException | `创建`新文件，创建成功返回true，否则返回false，有可能抛出IOException异常，必须捕捉 |
 | boolean delete()                                   | `删除`文件，删除成功返回true，否则返回false                  |
 
-#### 3.流的类型
+### 3.流的类型
 
 |        |    字节流    | 字符流 |
 | :----: | :----------: | :----: |
@@ -35,7 +35,7 @@ File f2 = new File("D:\\Java\\Hello.java");
 
 以`字符流`的方式读: 读6次，6个字符
 
-#### 4.使用FileInputStream类读文件
+### 4.使用FileInputStream类读文件
 
 - `FileInputStream`类称为文件输入流，继承于`InputStream`类，是进行文件读操作的最基本类；
 - 它的作用是将文件中的数据输入到内存中，我们可以利用它来读文件；
@@ -52,11 +52,11 @@ File f2 = new File("D:\\Java\\Hello.java");
 | int read(byte[] b)<br/>throws IOException | 读取文件中的数据，将读到的数据存放到byte型数组中，并返回读取的字节的数量，未读到数据返回-1，有可能抛异常，必须捕捉 |
 | void close()<br/>throws IOException       | 关闭流对象，有可能抛异常，必须捕捉                           |
 
-#### 5.FileInputStream/FileOutputStream小结
+### 5.FileInputStream/FileOutputStream小结
 
 由于采用字节方式进行数据传输，不必考虑数据的格式问题，这两个类对文件操作的效率较高，可以使用这两个类完成复制文件的操作。
 
-#### 6.字符流
+### 6.字符流
 
 - `FileInputStram`类和`FileOutputStream`类对于Unicode编码的文件，可能出现乱码；
 - 考虑到Java是跨平台的语言，要经常操作Unicode编码的文件，使用字符流操作文件是有必要的；
@@ -66,7 +66,7 @@ File f2 = new File("D:\\Java\\Hello.java");
   - BufferedReader类
   - BufferedWriter类
 
-#### 7.FileReader类
+### 7.FileReader类
 
 该类将从文件中逐个地读取字符，效率比较低下，因此一般将该类对象包装到`缓冲流(BufferedReader)`中进行操作。
 
@@ -84,7 +84,7 @@ BufferedReader常用方法：
 | String readLine()<br/>throws IOException | 从缓冲读取流中读取一行字符，以字符串的形式返回，有可能抛异常，必须捕捉 |
 | void close()<br/>throws IOException      | 关闭流对象，有可能抛异常，必须捕捉                           |
 
-#### 8.FileWriter类
+### 8.FileWriter类
 
 与FileReader类相似，FileWriter类同样需要使用`缓冲流(BufferedWriter)`进行包装。
 
@@ -102,13 +102,13 @@ BufferedWriter类的常用方法：
 | void write(String str)<br/>throws IOException | 将一行字符串写入到缓冲写入流中，有可能抛异常，必须捕捉       |
 | void newLine()<br/>throws IOException         | 将一个回车换行符写入到文件中，从而达到换行的效果，有可能抛异常，必须捕捉 |
 
-#### 9.基本数据类型的读/写
+### 9.基本数据类型的读/写
 
 - `FileInputStream`和`FileOutputStream`在读写文件时不考虑数据的类型；
 - `FileWriter`和`FileReader`在读写文件时，将所有的数据都看做字符；
 - 但有时候，我们需要将各种类型的数据写入文件或是从文件中读取，`DataInputStream类`和`DataOutputStream类`可以满足需要。
 
-#### 10.DataInputStream类
+### 10.DataInputStream类
 
 DataInputStream类可以输入任何类型的数据，但它不可以单独使用，需要要配合其它字节输入流一起使用
 
@@ -129,7 +129,7 @@ DataInputStream类的常用方法：
 | final float readFloat() throws IOException     | 从数据输入流中读取一个`float`型数据 |
 | final float readDouble() throws IOException    | 从数据输入流中读取一个`double`型数据 |
 
-#### 11.对象的[序列化](http://www.runoob.com/java/java-serialization.html)
+### 11.对象的[序列化](http://www.runoob.com/java/java-serialization.html)
 
 - 对象的序列化：把对象写到一个输出流中
 
@@ -155,7 +155,7 @@ DataInputStream类的常用方法：
   public final Object readObject() throws IOException, ClassNotFoundException
   ```
 
-##### Example
+#### Example
 
 ```java
 //序列化：

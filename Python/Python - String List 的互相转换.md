@@ -1,4 +1,4 @@
-#### 1.字符串转列表
+### 1.字符串转列表
 
 ```python
 str1 = "hi hello world"
@@ -11,7 +11,7 @@ print(str1.split(" "))
 ['hi', 'hello', 'world']
 ```
 
-#### 2.列表转字符串
+### 2.列表转字符串
 
 ```python
 list = ["hi","hello","world"]
