@@ -107,3 +107,22 @@
 
 ### 2.3 [复用技术](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470296&cid=1214124680&replay=true)
 
+#### 特点
+
+- 多用户共享同一根信道
+- 干线起点共用，干线终点分离
+
+#### 频分多路复用FDM技术
+
+- 波分多路复用WDM技术
+- 密集波分多路复用DWDM技术
+
+#### 时分多路复用TDM技术
+
+- 统计时分多路复用STDM技术
+
+#### 码分多路复用CDMA技术
+
+- 广泛用于3G
+
+### 2.4 [调制技术](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470297&cid=1214124684&replay=true)
