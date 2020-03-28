@@ -80,7 +80,7 @@ e1437bff1caa        ubuntu		"/bin/bash"         24 seconds ago      Exited (0) 2
 
 在使用 **-d** 参数时，容器启动后会进入后台。通过以下指令进入：
 
-- `docker attach`：如果从这个容器退出，会导致容器的停止，**Ctrl + P + Q **将交互式容器转到后台
+- `docker attach`：如果从这个容器退出，会导致容器的停止，**Ctrl+P+Q** 将交互式容器转到后台
 - `docker exec`：在运行中的容器内启动新的进程
 
 #### 2.4.容器状态相关命令
@@ -91,4 +91,6 @@ e1437bff1caa        ubuntu		"/bin/bash"         24 seconds ago      Exited (0) 2
 - 删除容器：`docker rm [ID]`
   - `-f`：强制删除一个运行中的容器
   - [Docker 清理命令](https://www.runoob.com/w3cnote/docker-clear-command.html)
+
+#### 2.5.设置容器的端口映射
 
