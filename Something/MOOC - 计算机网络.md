@@ -1,5 +1,3 @@
-[toc]
-
 ## 第一章 概述
 
 ### 1.3 [常用基本概念](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470282)
