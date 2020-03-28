@@ -35,7 +35,7 @@
 
 *教程中将网络接入层分为 Data Link Layer 和 Physical Layer*
 
-### 1.4 [参考模型相关概念](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470284&cid=1214124648)
+### 1.5 [参考模型相关概念](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470284&cid=1214124648)
 
 #### 实体 Entity
 
@@ -48,3 +48,8 @@
 收发双方的对应层之间有一根直接的通道（虚通道）。沿着虚通道，`PDU`（协议数据单元）从发方到达收方
 
 协议数据单元PDU
+
+## 第二章 物理层
+
+### 2.1 概述
+
