@@ -126,3 +126,43 @@
 - 广泛用于3G
 
 ### 2.4 [调制技术](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470297&cid=1214124684&replay=true)
+
+#### 调制机制使用信号来传输比特
+
+- 基带传输`Baseband Transmission`
+- 通带传输`Passband Transmission`
+
+### 2.5 [公共交换电话网 PSTN](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470298&sm=1)
+
+#### 主要构成
+
+- 本地回路`Local Loop`
+- 干线`Trunks`
+- 交换局`Switching Offices`（包含端局）
+
+#### 本地回路
+
+- 传输模拟信号
+- 经过**调制解调器**传到端局
+
+#### 调制解调器
+
+- 用于将计算机产生的数字比特流转变为载波输出（模拟信号）
+- Modem，又称“猫”
+
+#### 干线
+
+- 多路复用
+- 连接交换局（包括端局）的连接
+- 通常使用光纤
+- 端局里有**编解码器**`codec`
+  - 模拟信号数字化/数字信号模拟化
+  - 脉冲编码调制PCM
+
+#### 交换局
+
+- 电路交换`Circuit Switching`
+  1. 建立连接
+  2. 传数据
+  3. 拆除连接
+- 包交换`Packet Switching`（分组交换）
