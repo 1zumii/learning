@@ -98,3 +98,22 @@ e1437bff1caa        ubuntu		"/bin/bash"         24 seconds ago      Exited (0) 2
 
 - `-P`:是容器内部端口**随机**映射到主机的高端口
 - `-p`:是容器内部端口绑定到**指定**的主机端口
+
+## 3.遇到的问题
+
+### 3.1.路径写法
+
+```powershell
+...: Error response from daemon: invalid mode: /server/tmp.
+```
+
+不能使用Win10的写法，如：`d:/CodeAbout/115.182.68.146/sms/server/tmp`
+
+应该是写作linux下的写法：`/d/CodeAbout/115.182.68.146/sms/server/tmp`
+
+```bash
+asus@DESKTOP-S0T0DB3 MINGW64 /d/... (...)
+$ pwd
+/d/CodeAbout/115.182.68.146/sms/server/tmp
+```
+
