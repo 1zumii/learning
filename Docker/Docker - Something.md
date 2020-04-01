@@ -140,6 +140,6 @@ docker is configured to use the default machine with IP 192.168.99.100
 For help getting started, check out the docs at https://docs.docker.com
 ```
 
-在Docker QuickStart Terminal启动后，会显示docker machine配置的IP地址。
+- 在Docker QuickStart Terminal启动后，会显示docker machine配置的IP地址
 
-可以通过命令
+- 可以通过命令`docker-machine inspect`，在`IPAdderss`下看见对应的IP地址
