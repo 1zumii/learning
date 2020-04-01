@@ -101,6 +101,8 @@ e1437bff1caa        ubuntu		"/bin/bash"         24 seconds ago      Exited (0) 2
 
 ## 3.遇到的问题
 
+*问题都出现在Win10的Docker Toolbox*
+
 ### 3.1.路径写法
 
 ```powershell
@@ -117,3 +119,27 @@ $ pwd
 /d/CodeAbout/115.182.68.146/sms/server/tmp
 ```
 
+### 3.2.挂载本地目录
+
+[参考文章](https://my.oschina.net/u/575836/blog/3015221)
+
+#### 问题
+
+使用`-v`挂载本地目录后，在docker容器内的对应共享目录下，显示为空。虽然在`docker run`命令启动容器的时候，并没有报错。
+
+#### 解决
+
+- 在VirtualBox中给default添加`共享文件夹`，勾选**自动挂载**、**固定分配**
+- `docker-machine restart`
+- 再试一遍，发现容器中对应挂载目录已经出现了宿主机的目录文件
+
+### 3.3.Docker Machine Ip
+
+```bash
+docker is configured to use the default machine with IP 192.168.99.100
+For help getting started, check out the docs at https://docs.docker.com
+```
+
+在Docker QuickStart Terminal启动后，会显示docker machine配置的IP地址。
+
+可以通过命令
