@@ -3,7 +3,7 @@
 - 在开发过程中，经常由于缺少类型检查造成许多不必要的bug，增加了测试难度。直到上线多时后才发现问题，并且问题的排查也相当困难，由此可见类型检查非常有必要。 
 - 出于性能方面的考虑，propTypes 仅在开发模式下进行检查。
 
-
+### PropTypes
 
 >1. PropTypes.array
 >2. PropTypes.bool
@@ -14,4 +14,22 @@
 >7. PropTypes.symbol
 >8. PropTypes.isRequired
 >9. PropTypes.any
+
+### Example
+
+```javascript
+import PropTypes from 'prop-types';
+
+class Greeting extends React.Component {
+  render() {
+    return (
+      ...
+    );
+  }
+}
+
+Greeting.propTypes = {
+  name: PropTypes.string
+};
+```
 
