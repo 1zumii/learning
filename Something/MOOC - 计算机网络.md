@@ -814,10 +814,22 @@ IP协议
 
 #### 保留的IP地址
 
-不会分配给一台特别的主机
+不能分配给某个接口/某个主机使用
 
 - D类：1110xxxx.xxxxxxxx.xxxxxxxx.xxxxxxxx
 - E类：11110xxx.xxxxxxxx.xxxxxxxx.xxxxxxxx
 
 - 网络地址：xxxxxxxx.xxxxxxxx.00000000.00000000
 - 广播地址：xxxxxxxx.xxxxxxxx.11111111.11111111
+- 0.0.0.0
+  - 表示：这个主机、这个网络
+  - 在路由表中，默认路由的目的地址
+- 255.255.255.255
+  - 泛洪广播地址
+- 127.0.0.0
+  - 环回地址`Lookback Network`
+  - 127.0.0.1 => localhost
+
+- 169.254.0.0
+  - 非正常地址
+  - 不能对外正常通信
