@@ -915,3 +915,38 @@ IP协议
 |   地址的格式    |  十六进制  | 点分十进制 |
 
 ### 5.5 [IP分组](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470346&cid=1214124849&replay=true)
+
+- IP分组包含12个基本的字段和选项字段
+- IP分组分为：头部、数据
+
+#### 报头长度
+
+- 大小：4bit
+- 单位：`4Byte`
+- 0101 ~ 1111
+
+#### 数据报总长
+
+- 大小：16bit
+- 单位：`Byte`
+
+#### 生存时间 TTL
+
+- 大小：8bit
+- 单位：`hop`
+- 每经过一个路由器，TTL-1
+- 当TTL-1=0时，路由器丢弃该分组，向源发回一个超时消息
+- 防止分组在网络无限循环
+
+#### 用户协议
+
+- 大小：8bit
+- 指明传输层采用的协议
+  - UDP：17
+  - TCP：6
+
+#### 目的IP地址
+
+- 大小：32bit
+
+### 5.6 [IPv6概述](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470347&sm=1)
