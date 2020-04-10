@@ -10,10 +10,10 @@
 
 | geom类型 | shape类型                                                    | 解释                                                         |
 | :------: | ------------------------------------------------------------ | ------------------------------------------------------------ |
-|  point   | 'circle','square','bowtie','diamond',<br/>'hexagon','triangle','triangle-down',<br/>'hollowCircle','hollowSquare','hollowBowtie',<br/>'hollowDiamond','hollowHexagon','hollowTriangle',<br/>'hollowTriangle-down','cross','tick','plus',<br/>'hyphen','line' | hollow开头的图形都是空心的                                   |
-|   line   | 'line','smooth','dot','dash','dotSmooth','spline'            | dot ：点线<br/>smooth： 平滑线                               |
-|   area   | 'area','smooth','line','dotLine',<br/>'smoothLine','dotSmoothLine' | [area]和[smooth]是填充内容的区域图，其他图表是空心的线图     |
-| interval | 'rect','hollowRect','line','tick','stroke'                   | [hollowRect]是空心的矩形， [line]和 [tick] 都是线段,stroke：带边框的矩形 |
+|  point   | 'circle','square','bowtie',<br/>'diamond','hexagon','triangle',<br/>'triangle-down','hollowCircle',<br/>'hollowSquare','hollowBowtie',<br/>'hollowDiamond','hollowHexagon',<br/>'hollowTriangle','hollowTriangle-down',<br/>'cross','tick','plus',<br/>'hyphen','line' | hollow开头的图形都是空心的                                   |
+|   line   | 'line','smooth','dot','dash',<br/>'dotSmooth','spline'       | dot ：点线<br/>smooth： 平滑线                               |
+|   area   | 'area','smooth','line',<br/>'dotLine','smoothLine','dotSmoothLine' | [area]和[smooth]是填充内容的区域图，其他图表是空心的线图     |
+| interval | 'rect','hollowRect','line',<br/>'tick','stroke'              | [hollowRect]是空心的矩形， [line]和 [tick] 都是线段,stroke：带边框的矩形 |
 | polygon  | 'polygon','hollow','stroke'                                  | polygon：多边形、hollow：空心多边形和 stroke：带边框的多边形 |
 |  schema  | 'box','candle'                                               | 目前仅支持箱须图、K线图                                      |
 
@@ -116,19 +116,19 @@ ReactDOM.render((
       start={{ month: 'Jan', revenue: 26.5 }}
       end={{ month: 'Dec', revenue: 26.5 }}  // 同 start
       lineStyle={{
-          stroke: '#999'	//	线的颜色
-          lineDash: [0],	//	虚线的设置
-          lineWidth: 1,	//	线的宽度
+          stroke: '#999'	// 线的颜色
+          lineDash: [0],	// 虚线的设置
+          lineWidth: 1,		// 线的宽度
       }}
       text {{
-        position: 'start',	// 'start' | 'center' | 'end'	| '39%' | 0.5 文本的显示位置
+        position: 'start',	// 'start' | 'center' | 'end' | '39%' | 0.5 文本的显示位置
         autoRotate: true,	// {boolean}是否沿线的角度排布，默认为true
         style: {
             fill: 'red',
         },
-        offsetX: 20,	              // {number} x 方向的偏移里
-        offsetY: -10,	            // {number} y 方向的偏移里
-        content: '预期收益趋势线',  // {string}文本的内容
+        offsetX: 20,			// {number} x 方向的偏移里
+        offsetY: -10,			// {number} y 方向的偏移里
+        content: '预期收益趋势线',// {string}文本的内容
       }}
     />
 </Guide>
