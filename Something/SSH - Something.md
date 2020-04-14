@@ -1,5 +1,6 @@
 1. [密码学笔记 - ruanyifeng.com](http://www.ruanyifeng.com/blog/2006/12/notes_on_cryptography.html)
 2. [公钥，私钥和数字签名这样最好理解 - CSDN](https://blog.csdn.net/21aspnet/article/details/7249401)
+3. [SSH原理与运用（一）：远程登录 - ruanyifeng.com](https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)
 
 ## 加密
 
@@ -31,3 +32,8 @@
 
 - 数字证书同数字签名和内容一并发送
 - 收方用**CA的公钥**解开数字证书，得到用户的公钥 ...
+
+## SSH原理与运用
+
+- SSH是一种网络协议，用于计算机之间的**加密登录**
+- 如果要在Windows系统中使用SSH，会用到`PuTTY`

@@ -1,14 +1,15 @@
-### [跨域](https://zhuanlan.zhihu.com/p/63629321)
+## [跨域 Cross-Origin](https://zhuanlan.zhihu.com/p/63629321) 
 
-- Cross-Origin
+### 同源策略
 
-- 同源策略
 
-- 反向代理
 
-  - \front\package.json
+### 反向代理
+
+*\front\package.json*
 
 ```json
+// create-react-app的版本在低于2.0的时候，可以如下配置proxy
 "proxy": {
     "/": {
         "target": "http://127.0.0.1:8000"
@@ -16,18 +17,21 @@
 }
 ```
 
-### [跨域资源共享CORS详解](http://www.ruanyifeng.com/blog/2016/04/cors.html)
+```json
+// 高于2.0的时候只能配置为string类型
+"proxy": "http://127.0.0.1:8000"
+```
+
+## [跨域资源共享CORS](http://www.ruanyifeng.com/blog/2016/04/cors.html)
 
 - 简单请求
 - 非简单请求
 
-### [package.json中的proxy字段](https://segmentfault.com/a/1190000014891894?utm_medium=referral&utm_source=tuicool)
+## [package.json中的proxy字段](https://segmentfault.com/a/1190000014891894?utm_medium=referral&utm_source=tuicool)
 
 - [在开发环境中代理API请求](https://www.html.cn/create-react-app/docs/proxying-api-requests-in-development/)
 - [How to get "create-react-app" to work with your API](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/)
 - 目前只了解到可以与create-react-app的react-scripts结合使用
-- create-react-app的版本在低于2.0的时候，可以如上截图配置proxy
-- 高于2.0的时候只能配置为string类型
 
 [React使用http-proxy-middle解决跨域问题](https://www.fakin.cn/2450.html)
 
