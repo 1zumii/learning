@@ -9,7 +9,7 @@
 ```javascript
 function Fn(){...}
 console.log(Fn.prototype)	// Fn为函数对象
-const f = new Fn()			// f为实例对象
+const f = new Fn()		// f为实例对象
 ```
 
 ### 1.2 回调函数
