@@ -1,6 +1,67 @@
-1. [Event Loop，nextTick()和setImmediate()区别分析](https://zhuanlan.zhihu.com/p/33090541)
-2. [JavaScript 事件循环 - task and microtask](https://www.cnblogs.com/dong-xu/p/7000139.html)
+## 一、基础概念
 
-- Promise
-- 宏任务
-- 微任务
+### 1.1 函数对象和实例对象
+
+- 函数对象：将函数作为对象使用时
+
+- 实例对象：new 函数产生的对象，简称对象
+
+```javascript
+function Fn(){...}
+console.log(Fn.prototype)	// Fn为函数对象
+const f = new Fn()			// f为实例对象
+```
+
+### 1.2 回调函数
+
+- 把函数的`指针`作为参数传递给另一个函数，当这个指针被用来调用其所指向的函数时，就称之为**回调函数**
+- 回调函数<u>不是由该函数的实现方直接调用</u>，而是在特定的事件或条件发生时由另外的一方调用的，用于对该事件或条件进行响应。
+
+> 以下是来自知乎作者常溪玲的解说：
+>
+> 你到一个商店买东西，刚好你要的东西没有货，于是你在店员那里留下了你的电话，过了几天店里有货了，店员就打了你的电话，然后你接到电话后就到店里去取了货。在这个例子里，你的电话号码就叫回调函数，你把电话留给店员就叫登记回调函数，店里后来有货了叫做触发了回调关联的事件，店员给你打电话叫做调用回调函数，你到店里去取货叫做响应回调事件。
+
+#### 同步回调函数
+
+- 立即执行，完全执行完了才结束，**不会放入**`回调队列`中
+- 例如
+  - 数组遍历相关的回调函数
+  - Promise的`executor`函数
+
+```javascript
+const arr = [a,b,c]
+arr.forEach((item,index)=>{		// 遍历回调函数，同步回调函数
+	console.log(item)
+})
+console.log('after forEach')
+```
+
+```bash
+>>> a
+>>> b
+>>> c
+>>> after forEach
+```
+
+#### 异步回调函数
+
+- 不会立即执行，**放入**`回调队列`将来执行
+- 例如
+  - 定时器回调
+  - ajax回调
+  - Promise的成功、失败的回调
+
+```javascript
+setTimeout(() => {
+    console.log('setTimeout')
+},0)
+console.log('before setTimeout')
+```
+
+```bash
+>>> before setTimeout
+>>> setTimeout
+```
+
+### 1.3 JavaScript的错误处理
+
