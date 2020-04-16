@@ -65,3 +65,55 @@ console.log('before setTimeout')
 
 ### 1.3 JavaScript的错误处理
 
+#### 类型
+
+- Error -> 所有错误的父类型
+
+- ReferenceError
+- TypeError
+- RangeError
+- SyntaxError
+
+#### 处理
+
+- 捕获：`try...catch`
+- 抛出：`throw error`
+
+## 二、Promise的理解和使用
+
+### 2.1 Promise
+
+```javascript
+const p = new Promise((resolve,reject)=>{	// executor
+    // 异步操作
+    ...
+    if(success){
+        resolve(value)
+    }else{
+        reject(reason)
+    }
+})
+p.then(
+	value => ... ,		// onResolved
+    reason => ... ,		// onRejected
+)
+```
+
+#### 旧的异步解决方案
+
+#### 具体表达
+
+- 语法层面：Promise是一个**构造函数**
+- 功能层面：Promise对象封装一个**异步操作**并可以获取其结果
+
+#### Promise的状态改变
+
+- `pending` => `resolved`，value（成功的结果数据）
+- `pending` => `rejected`，reason（失败的结果数据）
+
+#### 执行流程
+
+- 执行了异步操作后，`promise对象`的状态发生变化
+- 执行回调函数`then()`，`catch()`
+- 返回一个`新的promise对象`
+
