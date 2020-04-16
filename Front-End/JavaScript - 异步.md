@@ -94,8 +94,8 @@ const p = new Promise((resolve,reject)=>{	// executor
     }
 })
 p.then(
-	value => ... ,		// onResolved
-    reason => ... ,		// onRejected
+    value => {...},		// onResolved
+    reason => {...}		// onRejected
 )
 ```
 
