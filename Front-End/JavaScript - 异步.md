@@ -299,7 +299,42 @@ new Promise((resolve,reject) => {
 - `then()`方法里面未定义`onRejected`，等同于定义了
 
   ```javascript
+  // 默认定义
   reason => {throw reason}
+  // 可理解为
+  reason => new Promise((resolve,reject) => {
+      reject(reason)
+  })
+  ```
+
+  ```javascript
+  new Promise((resolve,reject) => {
+  	setTimeout(() => {
+  		console.log(3)
+  		resolve(4)
+  	},1000)
+  }).then(
+  	value => {throw 7}			// 抛出的异常在13行被接收
+  ).then(
+  	value => {
+  		console.log(10,value)
+  	},
+  	reason => {
+  		console.log(13,reason)
+  	}
+  ).catch(
+  	reason => console.log(16,reason)
+  ).then(
+  	value => console.log(18,value),
+  	reason => console.log(19,reason)
+  )
+  ```
+
+  ```bash
+  异常传透需要保证then方法中不定义onRejected回调函数，若定义，则异常直接被接收
+  >>> 3
+  >>> 13 7
+  >>> 18 undefined
   ```
 
 - 跟传统的try/catch代码块不同的是，如果没有使用`catch`方法指定错误处理的回调函数， Promise对象抛出的错误**不会**传递到外层代码，即不会有任何反应。
