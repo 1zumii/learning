@@ -251,37 +251,47 @@ console.log(7)
 
 #### promise.then()返回的新promise实例对象
 
+- 新promise对象的`结果状态`
+  - 由`then()`指定的回调函数，执行的结果决定
+  - 如果抛出异常，新promise的状态变为`rejected`，reason为抛出的异常
+  - 如果返回非promise实例对象的任意值（无返回，视为返回`undefined`），新promise的状态变为`resolved`，value为返回的值
+  - 如果返回的是另一个`新的promise`，则直接返回此promise实例对象，此promise的结果作为新promise的结果
+
 ```javascript
 new Promise((resolve,reject) => {
     resolve(2)		// pending => resolve
 }).then(
-    value => console.log(4,value),
-    reason => console.log(5,reason)
+    value => console.log('onResolved1',value),	// 相当于return undefined
+    reason => console.log('onRejected1',reason)
 ).then(
-    value => console.log(7,value),
-    reason => console.log(8,reason)
+    value => console.log('onResolved2',value),
+    reason => console.log('onRejected2',reason)
 )
 ```
 
 ```bash
->>> 4 2
->>> 7 undefined
+>>> onResolved1 2
+>>> onResolved2 undefined
 ```
 
 ```javascript
 new Promise((resolve,reject) => {
     reject(2)		// pending => reject
 }).then(
-    value => console.log(4,value),
-    reason => console.log(5,reason)
+    value => console.log('onResolved1',value),
+    reason => console.log('onRejected1',reason)
 ).then(
-    value => console.log(7,value),
-    reason => console.log(8,reason)
+    value => console.log('onResolved2',value),
+    reason => console.log('onRejected2',reason)
 )
 ```
 
 ```bash
->>> 5 2
->>> 
+>>> onRejected1 2
+>>> onResolved2 undefined
 ```
 
+#### catch 方法
+
+- 一般来说，不要在`then`方法里面定义`rejected`状态的回调函数，总是使用`catch`方法。
+- 跟传统的try/catch代码块不同的是，如果没有使用`catch`方法指定错误处理的回调函数， Promise对象抛出的错误**不会**传递到外层代码，即不会有任何反应。
