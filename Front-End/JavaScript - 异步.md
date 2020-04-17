@@ -49,6 +49,7 @@ const f = new Fn()		// f为实例对象
 - 例如
   - 数组遍历相关的回调函数
   - Promise的`executor`函数
+  - `then()`和`catch()`是同步执行，指定成功/失败的回调函数，其参数`onResolved`和`onRejected`才是异步回调函数
 
 ```javascript
 const arr = [a,b,c]
@@ -182,10 +183,69 @@ async function 请求() {
 
 - `pending` => `resolved`，value（成功的结果数据）
 - `pending` => `rejected`，reason（失败的结果数据）
+- 如果抛出异常，且此时状态为 pending => reject(reason = error)
 
 #### 执行流程
 
 - 执行了异步操作后，`promise对象`的状态发生变化
 - 执行回调函数`then()`，`catch()`
-- 返回一个`新的promise对象`
+- 返回一个`新的promise对象`（由 then 和 catch 返回）
+
+### 2.2 Promise的使用
+
+#### Promise.all(iterable)
+
+- `iterable`参数内所有promise都完成，或不包含promise => resolve(value**s**)
+- 参数中有一个promise失败，返回失败 => reject(reason)
+
+#### Promise.race(iterable)
+
+- 返回一个`promise`
+- 一旦迭代器中的某个 promise 解决或拒绝，返回的 promise 就会解决或拒绝
+
+### 2.3 关键问题
+
+#### 指定多个回调函数
+
+当promise改变为对应状态时，**都**会调用
+
+```js
+const p = new Promise((resolve,reject) => {
+    resolve(100)
+})
+p.then(value => {
+    console.log('value1',value)
+})
+p.then(value => {
+    console.log('value2',value)
+})
+```
+
+```bash
+>>> value1 100
+>>> value2 100
+```
+
+#### 得到数据的时间
+
+- 如果先指定回调，当状态发生改变时，回调函数就会调用，得到数据
+- 如果先改变状态，当回调函数指定的时候，回调函数就会调用，得到数据
+
+#### executor函数的执行
+
+```javascript
+new Promise((resolve,reject) => {
+    console.log(2)
+    resolve(3)
+}).then(
+	value => console.log(5)
+)
+console.log(7)
+```
+
+```bash
+>>> 2		// executor不放入回调队列
+>>> 7		// 同步执行
+>>> 5 3		// 异步执行的回调函数
+```
 
