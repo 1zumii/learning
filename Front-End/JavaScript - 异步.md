@@ -12,27 +12,16 @@ console.log(Fn.prototype)	// Fn为函数对象
 const f = new Fn()		// f为实例对象
 ```
 
-> // Promise函数对象的方法
->
-> Promise.all()
->
-> Promise.resolve()
->
-> Promise.reject()
->
-> 
->
-> // Promise实力对象的方法
->
-> Promise.prototype.then()
->
-> Promise.prototype.catch()
->
-> Promise.prototype.finally()
->
-> 
->
-> *以上在MDN的Promise左侧*
+- Promise函数对象的方法
+  - Promise.all()
+  - Promise.resolve()
+  - Promise.reject()
+- Promise实例对象的方法
+  - Promise.prototype.then()
+  - Promise.prototype.catch()
+  - Promise.prototype.finally()
+
+*以上在MDN的Promise左侧*
 
 ### 1.2 回调函数
 
@@ -276,19 +265,29 @@ new Promise((resolve,reject) => {
 
 ```javascript
 new Promise((resolve,reject) => {
-    reject(2)		// pending => reject
+	setTimeout(() => {
+		console.log(3)
+		resolve(4)
+	},1000)
 }).then(
-    value => console.log('onResolved1',value),
-    reason => console.log('onRejected1',reason)
+	value => {
+		console.log(8)
+		setTimeout(() => {
+			console.log(10)
+			return 11
+		},1000)
+	}
 ).then(
-    value => console.log('onResolved2',value),
-    reason => console.log('onRejected2',reason)
+	value => console.log(15,value),
+	reason => console.log(16,reason)
 )
 ```
 
 ```bash
->>> onRejected1 2
->>> onResolved2 undefined
+>>> 3
+>>> 8
+>>> 15 undefined
+>>> 10
 ```
 
 #### catch 方法
