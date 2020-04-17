@@ -290,7 +290,17 @@ new Promise((resolve,reject) => {
 >>> 10
 ```
 
-#### catch 方法
+#### 异常传透
 
-- 一般来说，不要在`then`方法里面定义`rejected`状态的回调函数，总是使用`catch`方法。
+- 一般来说，不要在`then()`方法里面定义`onRejected`，在最后使用`catch()`
+
+- 前面操作出了异常，都会传到最后的`catch()`中
+
+- `then()`方法里面未定义`onRejected`，等同于定义了
+
+  ```javascript
+  reason => {throw reason}
+  ```
+
 - 跟传统的try/catch代码块不同的是，如果没有使用`catch`方法指定错误处理的回调函数， Promise对象抛出的错误**不会**传递到外层代码，即不会有任何反应。
+
