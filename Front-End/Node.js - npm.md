@@ -2,8 +2,10 @@
 
 - 淘宝定制的cnpm( gzip压缩支持 ) 命令行工具代替默认的npm
 
-> $ npm install -g cnpm --registry = [https://registry.npm.taobao.org](https://registry.npm.taobao.org/)
-> $ npm config set registry https://registry.npm.taobao.org
+  ```bash
+  $ npm install -g cnpm --registry = https://registry.npm.taobao.org
+  $ npm config set registry https://registry.npm.taobao.org
+  ```
 
 - 取消镜像：npm config set registry https://registry.npmjs.org
 - [使用npm和cnpm](https://www.jianshu.com/p/f581cf9360a2)
