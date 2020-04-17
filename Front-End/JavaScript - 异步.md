@@ -249,3 +249,39 @@ console.log(7)
 >>> 5 3		// 异步执行的回调函数
 ```
 
+#### promise.then()返回的新promise实例对象
+
+```javascript
+new Promise((resolve,reject) => {
+    resolve(2)		// pending => resolve
+}).then(
+    value => console.log(4,value),
+    reason => console.log(5,reason)
+).then(
+    value => console.log(7,value),
+    reason => console.log(8,reason)
+)
+```
+
+```bash
+>>> 4 2
+>>> 7 undefined
+```
+
+```javascript
+new Promise((resolve,reject) => {
+    reject(2)		// pending => reject
+}).then(
+    value => console.log(4,value),
+    reason => console.log(5,reason)
+).then(
+    value => console.log(7,value),
+    reason => console.log(8,reason)
+)
+```
+
+```bash
+>>> 5 2
+>>> 
+```
+
