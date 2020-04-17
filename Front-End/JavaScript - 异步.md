@@ -238,7 +238,7 @@ new Promise((resolve,reject) => {
     console.log(2)
     resolve(3)
 }).then(
-	value => console.log(5)
+    value => console.log(5)
 )
 console.log(7)
 ```
