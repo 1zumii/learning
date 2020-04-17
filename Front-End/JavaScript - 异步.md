@@ -101,6 +101,43 @@ p.then(
 
 #### 旧的异步解决方案
 
+- 纯回调函数
+- 在真正的执行异步操作前，就需要指定好`successCallback`和`failureCallback`
+- 使用Promise，可以在异步操作得到结果**之后**指定两个回调函数（指定回调更加灵活）
+
+```javascript
+/*使用纯回调函数*/
+createAudioFileAsync(audioSettings,successCallback,failureCallback)
+```
+
+- 纯回调函数形式会产生`回调地狱`的问题，难以阅读、处理出错
+- 使用Promise，可以链式调用，解决回调地狱的问题
+- 异常传透：链式调用的错误处理只需要在最后使用`catch()`方法
+
+```javascript
+/*回调地狱*/
+请求1(function(请求结果1){
+    请求2(function(请求结果2){
+        请求3(function(请求结果3){
+            请求4(function(请求结果4){
+                请求5(function(请求结果5){
+                    请求6(function(请求结果3){
+                        ...
+                    },failureCallback)
+                },failureCallback)
+            },failureCallback)
+        },failureCallback)
+    },failureCallback)
+},failureCallback)
+
+/*友好点的方式*/
+const 请求结果1 = 请求1();
+const 请求结果2 = 请求2(请求结果1,failureCallback); 
+const 请求结果3 = 请求3(请求结果2,failureCallback); 
+const 请求结果4 = 请求2(请求结果3,failureCallback); 
+const 请求结果5 = 请求3(请求结果4,failureCallback); 
+```
+
 #### 具体表达
 
 - 语法层面：Promise是一个**构造函数**
