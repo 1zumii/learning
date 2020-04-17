@@ -134,8 +134,21 @@ createAudioFileAsync(audioSettings,successCallback,failureCallback)
 const 请求结果1 = 请求1();
 const 请求结果2 = 请求2(请求结果1,failureCallback); 
 const 请求结果3 = 请求3(请求结果2,failureCallback); 
-const 请求结果4 = 请求2(请求结果3,failureCallback); 
-const 请求结果5 = 请求3(请求结果4,failureCallback); 
+const 请求结果4 = 请求4(请求结果3,failureCallback); 
+const 请求结果5 = 请求5(请求结果4,failureCallback); 
+    
+/*async\await -> 回调地狱的终极解决方案*/
+async function 请求() {
+    try{
+        const 请求结果1 = await 请求1();
+        const 请求结果2 = await 请求2(请求结果1,failureCallback); 
+        const 请求结果3 = await 请求3(请求结果2,failureCallback); 
+        const 请求结果4 = await 请求4(请求结果3,failureCallback); 
+        const 请求结果5 = await 请求5(请求结果4,failureCallback); 
+    }catch(error){
+        failureCallback(error)
+    }
+}
 ```
 
 #### 具体表达
