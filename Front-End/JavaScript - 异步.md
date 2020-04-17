@@ -325,7 +325,7 @@ new Promise((resolve,reject) => {
   ).catch(
   	reason => console.log(16,reason)
   ).then(
-  	value => console.log(18,value),
+ 	value => console.log(18,value),
   	reason => console.log(19,reason)
   )
   ```
