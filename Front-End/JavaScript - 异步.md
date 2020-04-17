@@ -12,12 +12,34 @@ console.log(Fn.prototype)	// Fn为函数对象
 const f = new Fn()		// f为实例对象
 ```
 
+> // Promise函数对象的方法
+>
+> Promise.all()
+>
+> Promise.resolve()
+>
+> Promise.reject()
+>
+> 
+>
+> // Promise实力对象的方法
+>
+> Promise.prototype.then()
+>
+> Promise.prototype.catch()
+>
+> Promise.prototype.finally()
+>
+> 
+>
+> *以上在MDN的Promise左侧*
+
 ### 1.2 回调函数
 
 - 把函数的`指针`作为参数传递给另一个函数，当这个指针被用来调用其所指向的函数时，就称之为**回调函数**
 - 回调函数<u>不是由该函数的实现方直接调用</u>，而是在特定的事件或条件发生时由另外的一方调用的，用于对该事件或条件进行响应。
 
-> 以下是来自知乎作者常溪玲的解说：
+> *以下是来自知乎作者常溪玲的解说*
 >
 > 你到一个商店买东西，刚好你要的东西没有货，于是你在店员那里留下了你的电话，过了几天店里有货了，店员就打了你的电话，然后你接到电话后就到店里去取了货。在这个例子里，你的电话号码就叫回调函数，你把电话留给店员就叫登记回调函数，店里后来有货了叫做触发了回调关联的事件，店员给你打电话叫做调用回调函数，你到店里去取货叫做响应回调事件。
 
@@ -115,7 +137,7 @@ createAudioFileAsync(audioSettings,successCallback,failureCallback)
 - 异常传透：链式调用的错误处理只需要在最后使用`catch()`方法
 
 ```javascript
-/*回调地狱*/
+// 回调地狱
 请求1(function(请求结果1){
     请求2(function(请求结果2){
         请求3(function(请求结果3){
@@ -130,14 +152,14 @@ createAudioFileAsync(audioSettings,successCallback,failureCallback)
     },failureCallback)
 },failureCallback)
 
-/*友好点的方式*/
+// 友好点的方式
 const 请求结果1 = 请求1();
 const 请求结果2 = 请求2(请求结果1,failureCallback); 
 const 请求结果3 = 请求3(请求结果2,failureCallback); 
 const 请求结果4 = 请求4(请求结果3,failureCallback); 
 const 请求结果5 = 请求5(请求结果4,failureCallback); 
     
-/*async\await -> 回调地狱的终极解决方案*/
+// async\await -> 回调地狱的终极解决方案，无需回调函数
 async function 请求() {
     try{
         const 请求结果1 = await 请求1();
