@@ -143,6 +143,39 @@
 
 - 如果没有指定完整的命名空间，那么路由文件`web.php`中所有控制器都位于App\Http\Controllers命名空间下
 
+#### 控制器中的中间件
+
+`Middleware`可以在路由文件中被分配给控制器路由
+
+```php
+Route::get('profile', 'UserController@show')->middleware('auth');
+```
+
+使用控制器构造函数中的`middleware()`方法
+
+- 可以约束中间件只对控制器类中的某些特定方法生效
+- `only()`
+- `except()`
+
+```php
+class UserController extends Controller
+{
+    /**
+     * 实例化一个控制器实例
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+        $this->middleware('log')->only('index');
+
+        $this->middleware('subscribed')->except('store');
+    }
+}
+```
+
 ### 10.[请求](https://learnku.com/docs/laravel/5.5/requests/1297)
 
 - `use Illuminate\Http\Request;`
