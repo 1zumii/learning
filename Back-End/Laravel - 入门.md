@@ -145,17 +145,16 @@
 
 #### 控制器中的中间件
 
-`Middleware`可以在路由文件中被分配给控制器路由
+- `Middleware`可以在路由文件中被分配给控制器路由
 
 ```php
 Route::get('profile', 'UserController@show')->middleware('auth');
 ```
 
-使用控制器构造函数中的`middleware()`方法
-
-- 可以约束中间件只对控制器类中的某些特定方法生效
-- `only()`
-- `except()`
+- 使用控制器构造函数中的`middleware()`方法
+  - 可以约束中间件只对控制器类中的某些特定方法生效
+  - `only()`
+  - `except()`
 
 ```php
 class UserController extends Controller
