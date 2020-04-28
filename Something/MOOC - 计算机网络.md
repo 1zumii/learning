@@ -1340,6 +1340,10 @@ Link State Routing
 
 ### 5.17 [网络地址翻译 NAT](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470364&sm=1)
 
+- Net Address Translate
+- 私人地址和共有IP地址之间的转换
+- IP地址枯竭的快速修补方案
+
 #### 私人地址空间
 
 - 不可路由
