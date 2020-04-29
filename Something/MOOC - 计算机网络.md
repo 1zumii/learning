@@ -1361,3 +1361,59 @@ Link State Routing
 
 #### NAT的缺点
 
+- 影响部分协议和应用的同学
+- 增加了网络延时
+- NAT转换器可能成为网络的瓶颈
+
+### 5.18 [互联网控制消息协议 ICMP](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470365&sm=1)
+
+Internet Control Message Protocol
+
+- 一般来说，ICMP消息仅发送给**源机**
+- ICMP消息**不生成**自己的差错报告
+- ICMP消息封装在IP分组中
+
+#### 主要功能
+
+- 确认IP包是否成功送达目标地址
+- 通知在发送过程当中IP包被丢弃的具体原因
+- 改善网络设置
+
+#### ICMP的具体应用
+
+- Ping
+  - **源机**向目的站点发送`ICMP回声请求`报文
+  - **目的站点**接收到，必须向源机站点发回一个`ICMP回声应答`报文
+  - 源机站点收到应答报文，且其中的任选数据和发出去的相同，则判断目的站点**可达**，否则为不可达
+- TraceRoute
+- 路径MTU（最大传输单元）
+
+#### Ping的应用
+
+- 测试TCP/IP是否正常工作
+
+  ```bash
+  ping 127.0.0.1
+  ```
+
+- 测试网络设备是否正常
+
+  ```bash
+  ping <本机的IP地址>
+  ```
+
+- 检查对外连接的路由器
+
+  ```bash
+  ping <默认网关IP>
+  ```
+
+- 检查与某台设备的畅通情况
+
+  ```bash
+  ping <设备的IP>
+  ```
+
+### 5.19 [地址解析协议 ARP](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470366&sm=1)
+
+Address Resolution Protocol
