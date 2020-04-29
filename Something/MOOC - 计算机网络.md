@@ -1471,3 +1471,54 @@ Address Resolution Protocol
 - 令牌桶可以累计令牌，允许有`上限的突发`
 - 桶满时，丢弃**令牌**
 - 有时候，可以在令牌桶后，再串接一个漏桶
+
+## 第六章 传输层
+
+### 6.1 [传输层概述](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470377&sm=1)
+
+- 网络层主要运行在路由器上，因此用户无法真正控制的到网络层
+- 传输层标准同一的原语，即可使用网络服务
+- 传输层服务和网络层服务的不同
+  - 网络层负责把数据从源机送达至目的机
+  - 传输层负责把数据送达到具体的应用进程
+
+- PDU：`数据段`（TPDU/Segment）
+- 传输层的协议
+  - UPD：用户数据报协议`User Datagram Protocol`
+  - TCP：传输控制协议`Transmission Control Protocol`
+
+### 6.2 [用户数据报协议 UDP](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470378&cid=1214124967&replay=true)
+
+User Datagram Protocol
+
+- 是传输层上一个轻量级的协议，提供高效的`端到端`的`数据段`传输
+- UDP**不提供**数据传输的可靠保证
+
+#### UDP数据段头
+
+- 字段：每段2Byte
+  - 源端口`Source Port`
+  - 目的端口`Destination Port`
+  - UDP Length
+  - UDP Checksum
+
+|    端口号     |                                |
+| :-----------: | :----------------------------: |
+|   0 ~ 1023    | 公共应用，INAN分配（知名端口） |
+| 1024 ~ 49151  |       用户端口，注册端口       |
+| 49152 ~ 65535 |       动态端口，私人端口       |
+
+> 例如：访问网站时
+>
+> 网站的端口号通常为知名端口，如：80
+>
+> 自己的端口号为**自由端口**，通常为操作系统随机分配的＞49151的端口号
+
+### 6.3 [通信模型](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470379&cid=1214124971&replay=true)
+
+- 端点
+  - 套接字`Socket`
+  - (IP，Port)
+
+- 通信三元组
+  - (源端，目的端，传输协议)
