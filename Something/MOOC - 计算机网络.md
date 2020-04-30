@@ -11,6 +11,12 @@
 
 一系列规则和约定的规范性描述
 
+> 协议如同人与人的对话
+>
+> - 将汉语和英语当作“协议”
+> - 将聊天当作“通信”
+> - 将聊天的内容当作“数据”
+
 #### 网络按规模划分
 
 1. PAN
@@ -34,6 +40,10 @@
 4. 网络接入层`Network Access Layer`
 
 *教程中将网络接入层分为 Data Link Layer 和 Physical Layer*
+
+#### 通过对话理解分层
+
+![image-20200430124244932](image-20200430124244932.png)
 
 ### 1.5 [参考模型相关概念](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470284&cid=1214124648)
 
@@ -1000,8 +1010,11 @@ IP协议
 #### IPv6地址分类
 
 - 单播地址`Unicast Address`
+  - 一对一通信
 - 组播地址`Multicast Address`
+  - 特定组内通信
 - 任播地址`Anycast Address`
+  - 特定组内，任意一台计算机
 
 #### 特殊地址
 
