@@ -1493,12 +1493,14 @@ Address Resolution Protocol
 - 传输层标准同一的原语，即可使用网络服务
 - 传输层服务和网络层服务的不同
   - 网络层负责把数据从源机送达至目的机
-  - 传输层负责把数据送达到具体的应用进程
+  - 传输层负责把数据送达到具体的`应用进程`
 
 - PDU：`数据段`（TPDU/Segment）
 - 传输层的协议
   - UPD：用户数据报协议`User Datagram Protocol`
+    - 面向无连接型
   - TCP：传输控制协议`Transmission Control Protocol`
+    - 面向有连接型
 
 ### 6.2 [用户数据报协议 UDP](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470378&cid=1214124967&replay=true)
 
@@ -1535,3 +1537,97 @@ User Datagram Protocol
 
 - 通信三元组
   - (源端，目的端，传输协议)
+
+|  地址   | 作用                                     |
+| :-----: | ---------------------------------------- |
+| MAC地址 | 识别同一链路中不同的计算机               |
+| IP地址  | 识别TCP／IP网络中互连的主机和路由器      |
+| 端口号  | 识别同一台计算机中进行通信的不同应用程序 |
+
+*端口号也称程序地址*
+
+### 6.4 [TCP数据段](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470380&sm=1)
+
+#### TCP实体
+
+- 管理TCP流和IP层的`接口`
+- 亦可以是`用户进程`或`操作系统内核`
+
+#### TCP段头
+
+- 源端口、目的端口
+- 序列号：为每个字节编号
+- 确认号（32bit）
+  - 期望接收的序列号
+  - `ack控制位`置位才有效
+  - TCP可靠传输的保证：`肯定确认机制`
+- 六个控制位（1bit）：用于建立连接、拆除、异常处理等
+- 窗口尺寸：用于流控`Flow Control`，以免收方被数据淹没
+
+#### 控制位
+
+- URG`Urgent Flag`
+  - 标明紧急数据的起始位置
+  - 收方收到，首先处理
+- ACK`Acknowlegement Flag`
+  - 1：启用捎带确认
+  - 0：确认号是无效的
+- PSH`Push Flag`
+  - 收方收到后，应立刻送往上层，而不需要缓存它
+- RST`Reset Flag`
+  - 重置一个已经非常混乱的连接
+  - 如果处于连接建立阶段，直接拒绝建立该连接
+- SYN`Synchronize Flag`
+  - （SYN=1，ACK=0）：连接建立请求
+  - （SYN=1，ACK=1）：连接接收
+- FIN`Fin Flag`
+  - 释放连接
+  - 发送方已无数据需要发送，但可以继续接收数据
+
+### 6.5 [TCP三次握手建立连接](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470381&cid=1214124979&replay=true)
+
+- 任何采用了TCP的**应用**，都会在正式传输数据前，搭建此TCP的连接
+- 三次握手，也称`同步`
+- 握手的过程中，双方交换`初始序列号`
+- 全双工：双方可以互相收发数据
+
+#### 建立连接的过程
+
+1. 一方`Server`被动地等待一个进来的连接请求
+2. 另一方`Client`通过发送连接请求，设置参数
+3. 服务器方回发确认应答
+4. 应答到达请求方，请求方最后确认，连接建立
+
+![image-20200430165740811](image-20200430165740811.png)
+
+- 第一次握手：Client -> Server
+  - 连接请求数据段`SYN`
+  - SYN（SEQ = x）
+  - `x`为初始序列号，Client随机产生
+  - 控制位：SYN=1，ACK=0
+- 第二次握手：Client <- Server
+  - 连接应答`SYN`
+  - SYN（SEQ = y，ACK = x+1）
+  - `y`为初始序列号，Server随机产生
+  - `ACK = x+1`表示对Client的 x 号字节的确认
+  - 控制位：SYN=1，ACK=1
+- 第三次握手：Client -> Server
+  - 最后的确认
+  - （SEQ = y+1，ACK = x+1）
+  - 控制位：SYN=0，ACK=1
+
+#### 拒绝服务攻击 DoS
+
+> 攻击人Attacker控制一些机器，装有Agent
+>
+> Agent向被攻击的服务器Victim**不断发送**第一次握手信息，其中包含了一个伪造且**不存在**的源IP地址
+>
+> 服务器Victim处理这些Agent发送的握手，回发第二次握手信息，并**等待**第三次握手信息
+>
+> 但因为第一次握手信息中的源IP是不存在的，所有服务器Victim根本就收不到第三次握手信息
+>
+> 服务器Victim被挂起太多等待的进程，最终资源耗尽而瘫痪
+
+### 6.6 [TCP连接释放](https://www.icourse163.org/learn/SCUT-1002700002?tid=1206622278#/learn/content?type=detail&id=1211470382&cid=1214124983&replay=true)
+
+- TCP是全双工，连接的释放必须是**双向**的
