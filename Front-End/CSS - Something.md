@@ -168,6 +168,8 @@ div {
 
 - 平铺`background-repeat`：<u>repeat</u>，no-repeat，repeat-x，repeat-y
 
+- 固定`backgroud-attachment`：<u>scroll</u>，fixed（*可制作视差滚动效果*）
+
 - **位置**`background-position`：（x，y）
 
   - 方位：top，center，bottom，left，right
@@ -175,12 +177,15 @@ div {
     ```css
     /* 
      * 盒子靠上，居中的位置 
-     * 如果只指定x，则y默认为
      */
     backgroup-position: center top;
     ```
 
   - 精确单位：百分数|带单位的长度值
+
+  - 如果只指定x，则y默认为`center`
+
+  - 方位和单位可以混合使用
 
 ### 8. 图片整合 Sprites
 

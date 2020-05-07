@@ -120,3 +120,65 @@
 }
 ```
 
+### 2. 果冻效果的按钮
+
+[参考视频](https://www.bilibili.com/video/BV1Fk4y1R77R?t=411)
+
+```html
+<body>
+    <div class="wrapper">
+        <div class="btn">cute</div>
+    </div>
+</body>
+```
+
+```css
+body {
+    width: 100vh;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(247, 251, 252);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    width: 150px;
+    height: 75px;
+    color: white;
+    text-align: center;
+    line-height: 75px;
+    background-color: rgb(24, 189, 204);
+}
+
+.btn:active {
+    cursor: pointer;
+    animation: cute 0.5s;
+}
+
+@keyframes cute {
+
+    0%,
+    100% {
+        transform: scale(1, 1);
+    }
+
+    25%,
+    75% {
+        transform: scale(0.9, 1.1);
+    }
+
+    50% {
+        transform: scale(0.8, 1.2);
+    }
+}
+```
+
