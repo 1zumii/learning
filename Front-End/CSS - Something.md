@@ -160,3 +160,26 @@ div {
 }
 ```
 
+### 9. 背景 background
+
+- 颜色`backgroud-color`：<u>transparent</u>，*color*
+
+- 图片`background-image`：<u>none</u>，url(<i style="color:green">url</i>)
+
+- 平铺`background-repeat`：<u>repeat</u>，no-repeat，repeat-x，repeat-y
+
+- **位置**`background-position`：（x，y）
+
+  - 方位：top，center，bottom，left，right
+
+    ```css
+    /* 盒子靠上，居中的位置 */
+    backgroup-position: center top;
+    ```
+
+  - 精确单位：百分数|带单位的长度值
+
+### 8. 图片整合 Sprites
+
+- 又称，雪碧图、精灵图
+- 需要的图片整合成一张大图，**减少**HTTP的请求次数
