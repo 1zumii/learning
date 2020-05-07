@@ -140,9 +140,10 @@ transition: property duration timing-function delay
 - 行内元素`{display: inline}`
   - 相邻的行内元素在一行上，一行可显示多个
   - **没有** height，width 属性
+  - 有**左右**的 margin、padding
   - 默认宽度为内容的宽度
-  - 只能容纳文本/行内元素
-
+- 只能容纳文本/行内元素
+  
 - 行内块元素`{display: inline-block}`
   - 例如：\<img/>，\<input/>，\<td/>
   - 相邻的行内块元素在一行上
@@ -265,6 +266,11 @@ text-align: center
 ![div.son](image-20200507141434147.png)
 
 ![div.father](image-20200507141458540.png)
+
+- 解决方式
+  - 父元素定义边框
+  - 父元素指定padding
+  - 父元素添加属性：`overflow: hidden`
 
 #### 同一层相邻元素之间
 
