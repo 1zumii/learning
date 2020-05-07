@@ -173,7 +173,10 @@ div {
   - 方位：top，center，bottom，left，right
 
     ```css
-    /* 盒子靠上，居中的位置 */
+    /* 
+     * 盒子靠上，居中的位置 
+     * 如果只指定x，则y默认为
+     */
     backgroup-position: center top;
     ```
 
