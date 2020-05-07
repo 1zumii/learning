@@ -160,7 +160,7 @@ div {
 }
 ```
 
-### 9. 背景 background
+### 7. 背景 background
 
 - 颜色`backgroud-color`：<u>transparent</u>，*color*
 
@@ -191,3 +191,109 @@ div {
 
 - 又称，雪碧图、精灵图
 - 需要的图片整合成一张大图，**减少**HTTP的请求次数
+
+### 9. CSS三大特性
+
+- 层叠性：就近原则
+- 继承性
+- 优先级 *由低到高*
+  - 继承 / *
+  - 元素选择器
+  - 类选择器，伪类选择器
+  - ID选择器
+  - 行内样式
+  - `!important`
+
+### 10. padding撑开盒子
+
+- 如果指定了width/height时，也指定了padding，盒子的实际宽高会被padding撑大
+- 不指定width/height，直接指定padding，盒子的宽高不会被padding撑大
+
+### 11. 元素水平居中
+
+#### 块级元素
+
+- 一定要指定**宽度**
+- 左右的外边距为`auto`
+
+```css
+width: 200px
+margin: 20px auto
+```
+
+#### 行内元素和行内块元素
+
+- 给其父元素添加
+
+```css
+text-align: center
+```
+
+### 12. 外边距重叠
+
+- [外边距重叠 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
+
+- **块级**元素的**垂直**方向的`margin`会触发
+- 边界折叠，只会挑选**最大**边界范围留下
+
+#### 没有内容将父元素和后代元素分开
+
+```html
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+```
+
+```css
+.father {
+    background-color: deeppink;
+    height: 200px;
+    width: 150px;
+    margin-top: 15px;
+}
+
+.son {
+    background-color: deepskyblue;
+    height: 70px;
+    width: 55px;
+    margin-top: 5px;
+}
+```
+
+![div.son](image-20200507141434147.png)
+
+![div.father](image-20200507141458540.png)
+
+#### 同一层相邻元素之间
+
+```html
+<body>
+    <div class="a"></div>
+    <div class="b"></div>
+</body>
+```
+
+```css
+div {
+    width: 100px;
+    height: 100px;
+}
+
+.a {
+    background-color: deepskyblue;
+    margin-bottom: 15px;
+}
+
+.b {
+    background-color: deeppink;
+    margin-top: 5px;
+}
+```
+
+实际结果不会是15px + 5px，而是取两者中的较大值：15px
+
+![image-20200507141919788](image-20200507141919788.png)
+
+![image-20200507141937823](image-20200507141937823.png)
