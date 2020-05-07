@@ -131,4 +131,32 @@ transition: property duration timing-function delay
   input:focus { ... }
   ```
 
-  
+### 5. 元素的显示模式 display
+
+- 块级元素`{display: block}`
+  - 独占一行
+  - 有 height，width，margin，padding 属性
+  - 宽度默认是**父级**元素的`100%`
+- 行内元素`{display: inline}`
+  - 相邻的行内元素在一行上，一行可显示多个
+  - **没有** height，width 属性
+  - 默认宽度为内容的宽度
+  - 只能容纳文本/行内元素
+
+- 行内块元素`{display: inline-block}`
+  - 例如：\<img/>，\<input/>，\<td/>
+  - 相邻的行内块元素在一行上
+  - 默认宽度为本身内容的宽度
+  - 有 **height**，**width**，margin，padding 属性
+
+### 6. 单行文字垂直居中
+
+```css
+// 文字的行高 = 盒子的高度
+// 文字的行高 = 上空隙 + 文字高度 + 下空隙
+div {
+    height: 40px;
+    line-height: 40px;
+}
+```
+
