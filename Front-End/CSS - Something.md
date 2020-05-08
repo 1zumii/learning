@@ -524,3 +524,93 @@ div {
 
 ## 18. 定位 position
 
+### 定位模式
+
+- 静态定位`static`
+- 相对定位`relative`
+- 绝对定位`absolute`
+- 固定定位`fixed`
+- 粘性定位`sticky`
+
+### 边偏移
+
+- top，bottom，left，right
+
+### 特殊特性
+
+- `行内元素`添加绝对/固定定位，可以直接设置 width，height
+- `块级元素`添加绝对/固定定位，不设置宽高，默认大小为内容的大小
+
+### 静态定位 static
+
+- 元素的`默认`定位方式，可理解为**无定位**
+
+- 按照标准文档流，<u>无法使用</u>边偏移
+
+### 相对定位 relative
+
+- 元素使用边偏移移动位置时，**相对**其`原来的位置`（文档流中的位置）而言
+- 文档流的位置会被`保留`，效果与浮动不同
+- 不参照其父元素，也不参照屏幕
+- 典型应用：作为绝对定位的父元素（不设置位偏移，只设置模式为relative）
+
+### 绝对定位 absolute
+
+- 相对于**最近**的`非static`定位祖先元素的偏移
+
+- 当这样的祖先元素不存在时，则相对于<u>初始包含块</u>`inital container block`
+
+- 元素会**被移出**正常文档流，原来的位置**不再保留**
+
+- 绝对定位的元素可以设置外边距`margin`，且不会与其他边距合并
+
+  ```css
+  /* 实现绝对定位时的水平居中 */
+  .father {
+      width: 300px;
+      height: 300px;
+      background-color: deeppink;
+      position: relative;
+  }
+  
+  .son {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: fuchsia;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      margin: 0px auto;
+  }
+  /* 
+   * 方法二
+   * transform 里的 translate 偏移的百分比值是相对于自身大小的
+   * 方法一在微信小程序中无法生效
+   */
+  .son {
+      position: absolute;
+      bottom: 55%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+  }
+  ```
+
+### 固定定位 fixed
+
+- 相对于`viewport视口`（浏览器的可视窗口）偏移
+- 不随滚动条而滚动
+- 元素会**被移出**正常文档流，原来的位置**不再保留**
+
+### 粘性定位 sticky
+
+- 粘性定位可以被认为是相对定位和固定定位的混合
+- 元素在跨越`特定阈值`**前**为<u>相对定位</u>，**之后**为<u>固定定位</u>
+
+- **必须**指定 top，right，bottom，left 四个阈值其中之一，才可使粘性定位生效，否则其行为与相对定位相同
+
+### 与浮动的比较
+
+- 浮动会在文档流的盒子之上，但<u>不会覆盖</u>其中的`文字`/图片
+
+- 绝对定位/固定定位会覆盖文档流的盒子的所有内容
