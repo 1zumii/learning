@@ -171,6 +171,8 @@ div {
 
 - 固定`backgroud-attachment`：<u>scroll</u>，fixed（*可制作视差滚动效果*）
 
+- 大小`background-size`：[参考 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-size)
+
 - **位置**`background-position`：（x，y）
 
   - 方位：top，center，bottom，left，right
@@ -303,3 +305,53 @@ div {
 ![image-20200507141919788](image-20200507141919788.png)
 
 ![image-20200507141937823](image-20200507141937823.png)
+
+### 13. 圆角边框
+
+- border-radius: length / 左上，右上，右下，左下
+
+- 画圆形
+
+  ```css
+  /* 半径为盒子宽高的一半 */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; 
+  ```
+
+- 画椭圆
+
+  ```css
+  width: 50px;
+  height: 70px;
+  boder-radius: 50%;
+  ```
+
+### 14. 盒子阴影
+
+- box-shadow: <u>x</u>，<u>y</u>，blur，spread，color，*inset*
+  - x，y：阴影的水平➡、垂直⬇距离，允许负值
+  - blur：阴影的虚实程度，0px => 实心阴影
+  - spread：阴影的缩放程度，负值为阴影小于盒子尺寸
+  - color：阴影颜色
+  - inset：默认不写为外阴影`outset`
+
+- 阴影不占空间
+- 可以由`逗号`分隔的列表来描述一个或**多个**阴影效果
+
+```css
+/* 新拟物风格Neumorphism */
+box-shadow: 
+	18px 18px 30px rgba(0,0,0,0.1),
+	-18px -18px 30px rgba(255,255,255,1)
+```
+
+### 15. 兄弟选择器
+
+- [相邻兄弟选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Adjacent_sibling_combinator)`+`
+
+  当第二个元素紧跟在第一个元素之后，并且两个元素都是属于<u>同一个父元素</u>的子元素，则`第二个元素`将被选中。
+
+- [通用兄弟选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/General_sibling_combinator)`~`
+
+  位置无须紧邻，只须同层级，`A~B` 选择`A`元素之后**所有**同层级`B`元素。
