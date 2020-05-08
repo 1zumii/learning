@@ -1,4 +1,4 @@
-### 1. 多类名
+## 1. 多类名
 
 - 可以把一些标签元素共同的样式放到一个类中
 - 标签调用公共的类，再调用自己独有的类
@@ -19,7 +19,7 @@
 </html>
 ```
 
-### 2. 字体的粗细
+## 2. 字体的粗细
 
 - 一些字体只提供 `normal` 和 `bold` 两种值
 - `lighter`：比从父元素继承来的值更细(处在字体可行的粗细值范围内)
@@ -28,7 +28,7 @@
   - 非 100 的整数倍的值将被四舍五入转换为 100 的整倍数
   - **无需单位**
 
-### 3. 过渡 Transition
+## 3. 过渡 Transition
 
 ```css
 transition: property duration timing-function delay 
@@ -66,7 +66,7 @@ transition: property duration timing-function delay
 }
 ```
 
-### 4. 复合选择器
+## 4. 复合选择器
 
 - 后代选择器
 
@@ -93,8 +93,6 @@ transition: property duration timing-function delay
   </body>
   </html>
   ```
-
-  
 
 - 子选择器 `>`
 
@@ -130,8 +128,16 @@ transition: property duration timing-function delay
   ```css
   input:focus { ... }
   ```
+  
+- [相邻兄弟选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Adjacent_sibling_combinator)`+`
 
-### 5. 元素的显示模式 display
+  当第二个元素紧跟在第一个元素之后，并且两个元素都是属于<u>同一个父元素</u>的子元素，则`第二个元素`将被选中。
+
+- [通用兄弟选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/General_sibling_combinator)`~`
+
+  位置无须紧邻，只须同层级，`A~B` 选择`A`元素之后**所有**同层级`B`元素。
+
+## 5. 元素的显示模式 display
 
 - 块级元素`{display: block}`
   - 独占一行
@@ -150,7 +156,7 @@ transition: property duration timing-function delay
   - 默认宽度为本身内容的宽度
   - 有 **height**，**width**，margin，padding 属性
 
-### 6. 单行文字垂直居中
+## 6. 单行文字垂直居中
 
 ```css
 // 文字的行高 = 盒子的高度
@@ -161,7 +167,7 @@ div {
 }
 ```
 
-### 7. 背景 background
+## 7. 背景 background
 
 - 颜色`backgroud-color`：<u>transparent</u>，*color*
 
@@ -190,12 +196,12 @@ div {
 
   - 方位和单位可以混合使用
 
-### 8. 图片整合 Sprites
+## 8. 图片整合 Sprites
 
 - 又称，雪碧图、精灵图
 - 需要的图片整合成一张大图，**减少**HTTP的请求次数
 
-### 9. CSS三大特性
+## 9. CSS三大特性
 
 - 层叠性：就近原则
 - 继承性
@@ -207,14 +213,14 @@ div {
   - 行内样式
   - `!important`
 
-### 10. padding撑开盒子
+## 10. padding撑开盒子
 
 - 如果指定了width/height时，也指定了padding，盒子的实际宽高会被padding撑大
 - 不指定width/height，直接指定padding，盒子的宽高不会被padding撑大
 
-### 11. 元素水平居中
+## 11. 元素水平居中
 
-#### 块级元素
+### 块级元素
 
 - 一定要指定**宽度**
 - 左右的外边距为`auto`
@@ -224,7 +230,7 @@ width: 200px
 margin: 20px auto
 ```
 
-#### 行内元素和行内块元素
+### 行内元素和行内块元素
 
 - 给其父元素添加
 
@@ -232,14 +238,14 @@ margin: 20px auto
 text-align: center
 ```
 
-### 12. 外边距重叠
+## 12. 外边距重叠
 
 - [外边距重叠 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing)
 
 - **块级**元素的**垂直**方向的`margin`会触发
 - 边界折叠，只会挑选**最大**边界范围留下
 
-#### 没有内容将父元素和后代元素分开
+### 没有内容将父元素和后代元素分开
 
 ```html
 <body>
@@ -274,7 +280,7 @@ text-align: center
   - 父元素指定padding
   - 父元素添加属性：`overflow: hidden`
 
-#### 同一层相邻元素之间
+### 同一层相邻元素之间
 
 ```html
 <body>
@@ -306,7 +312,7 @@ div {
 
 ![image-20200507141937823](image-20200507141937823.png)
 
-### 13. 圆角边框
+## 13. 圆角边框
 
 - border-radius: length / 左上，右上，右下，左下
 
@@ -327,7 +333,7 @@ div {
   boder-radius: 50%;
   ```
 
-### 14. 盒子阴影
+## 14. 盒子阴影
 
 - box-shadow: <u>x</u>，<u>y</u>，blur，spread，color，*inset*
   - x，y：阴影的水平➡、垂直⬇距离，允许负值
@@ -346,12 +352,175 @@ box-shadow:
 	-18px -18px 30px rgba(255,255,255,1)
 ```
 
-### 15. 兄弟选择器
+## 15. 传统布局方式
 
-- [相邻兄弟选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Adjacent_sibling_combinator)`+`
+- 文档流
+- 浮动
+- 定位
 
-  当第二个元素紧跟在第一个元素之后，并且两个元素都是属于<u>同一个父元素</u>的子元素，则`第二个元素`将被选中。
+## 16. 浮动 Float
 
-- [通用兄弟选择器](https://developer.mozilla.org/zh-CN/docs/Web/CSS/General_sibling_combinator)`~`
+- 典型应用：多个块级元素一行内排列，无需使用`inline-block`
+- `float`属性用于创建`浮动框`，将其移动到一边，直到左边缘或右边缘<u>触及</u>**包含块**或另一个浮动框的边缘
+  - float：<u>none</u>，left，right
+- 浮动的特性
+  - 浮动元素会<u>脱离</u>标准文档流，`不再保留`<u>原先的位置</u>，原先的位置被其他的文档流元素占据
+  - 浮动元素会`一行内`显示，并且元素**顶部对齐**，父元素宽度不够，会另起一行
+  - 浮动元素会具有`行内块元素`的特性
+  - 浮动的盒子只会影响其**后**的标准流，<u>不会影响其前面的</u>
 
-  位置无须紧邻，只须同层级，`A~B` 选择`A`元素之后**所有**同层级`B`元素。
+```html
+<body>
+    <div class="kk1"></div>
+    <div class="kk2"></div>
+    <div class="kk3"></div>
+</body>
+```
+
+```css
+div {
+    width: 100px;
+    height: 100px;
+}
+
+.kk1 {
+    background-color: darkcyan;
+    float: left;
+}
+
+.kk2 {
+    background-color: deeppink;
+    width: 120px;
+    height: 130px;
+}
+
+.kk3 {
+    background-color: gold;
+    float: left;
+}
+```
+
+![image-20200508121144861](image-20200508121144861.png)
+
+## 17. 清除浮动
+
+### 引例
+
+> 很多场景下，父级包裹元素需要动态的变化高度。
+>
+> 在父级元素（标准文本流）<u>未指定高度时</u>，成为浮动盒子的两个子元素，因为脱离了标准文本流不再具有位置，所以无法将父级包裹元素的高度撑开。
+>
+> 此时，父级包裹元素的高度为0，又会影响下面的标准流元素。
+
+```html
+<body>
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+    </div>
+</body>
+```
+
+```css
+.father {
+    width: 800px;
+    border: 1px solid gold;
+}
+
+.son1 {
+    float: left;
+    width: 300px;
+    height: 200px;
+    background-color: peru;
+}
+
+.son2 {
+    float: left;
+    width: 200px;
+    height: 300px;
+    background-color: deeppink;
+}
+```
+
+### 解决
+
+- 清除浮动后，父级元素就会根据浮动的子元素自动检测高度，父级元素高度正常，就不会影响之后的标准流
+
+### 额外空标签标签使用clear
+
+- `clear属性`指定一个元素是否必须移动(清除浮动后)到在它之前的浮动元素下面
+
+  <u>none</u>，left，right，both
+
+- clear属性只能用在**块级元素**
+
+```html
+<body>
+    <div class="father">
+        <div class="son1"></div>
+        <div class="son2"></div>
+        <div class="clear"></div>
+    </div>
+</body>
+```
+
+```css
+.father {
+    width: 800px;
+    border: 1px solid gold;
+}
+
+.son1 {
+    float: left;
+    width: 300px;
+    height: 200px;
+    background-color: peru;
+}
+
+.son2 {
+    float: left;
+    width: 200px;
+    height: 300px;
+    background-color: deeppink;
+}
+
+.clear {
+    clear: both;
+}
+```
+
+### after伪元素清除浮动
+
+```css
+.father {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+```
+
+### 双伪元素清除浮动
+
+```css
+.father:before,
+.father:after {
+    content: "";
+    display: table;
+}
+.father:after {
+    clear: both;
+}
+```
+
+### 父级元素添加overflow属性
+
+```css
+.father {
+    overflow: hidden;
+}
+```
+
+## 18. 定位 position
+
