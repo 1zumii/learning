@@ -200,6 +200,7 @@ div {
 
 - 又称，雪碧图、精灵图
 - 需要的图片整合成一张大图，**减少**HTTP的请求次数
+- 通过`backgroud-position`移动需要的图片的位置
 
 ## 9. CSS三大特性
 
@@ -562,6 +563,8 @@ div {
 
 - 元素会**被移出**正常文档流，原来的位置**不再保留**
 
+- 由于脱离文档流，flex container中的`绝对定位元素`不参与flex layout
+
 - 绝对定位的元素可以设置外边距`margin`，且不会与其他边距合并
 
   ```css
@@ -614,3 +617,51 @@ div {
 - 浮动会在文档流的盒子之上，但<u>不会覆盖</u>其中的`文字`/图片
 
 - 绝对定位/固定定位会覆盖文档流的盒子的所有内容
+
+## 19. 元素的隐藏
+
+### display 属性
+
+- `display: none;`：隐藏元素
+
+- 元素被隐藏后，**不再占有**原来的位置
+
+### visibility 属性
+
+- visibility：<u>inherit</u>，visible，collapse，hidden
+- 元素被隐藏后，**继续占有**原来的位置
+
+### overflow 属性
+
+- 定义当一个元素的内容太大而无法适应`块级格式化上下文`时候该做什么
+- overflow：<u>visible</u>，auto，hidden，scroll
+- 如果有定位的盒子，慎用`overflow: hidden`
+
+## 20. 字体图标 IconFont
+
+- [参考视频](https://www.bilibili.com/video/BV14J4114768?p=257)
+- 本质是字体
+- 支持兼容性，不同的字体格式
+  - `.ttf`
+  - `.woff`
+  - `.eot`
+  - `.svg`
+
+## 21. CSS画三角形
+
+```css
+.box {
+    width: 0;
+    heigth: 0;
+    border: 10px solid transparent;
+    border-top-color: deeppink;
+}
+```
+
+## 22. 垂直对齐 vertical-align
+
+- 指定行内元素`inline`，行内块元素`inline-block`，表格单元格元素`table-cell`的垂直对齐方式
+
+- 对块级元素不起作用
+- [参考视频](https://www.bilibili.com/video/BV14J4114768?p=263)
+- [vertical-align - MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/vertical-align)
