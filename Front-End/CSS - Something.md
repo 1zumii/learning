@@ -665,3 +665,48 @@ div {
 - 对块级元素不起作用
 - [参考视频](https://www.bilibili.com/video/BV14J4114768?p=263)
 - [vertical-align - MDN](https://developer.mozilla.org/zh-CN/docs/Web/CSS/vertical-align)
+
+## 23. H5新标签
+
+- [使用 HTML 章节与大纲 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document)
+
+- \<video>：不适用插件的情况下，原生支持视频格式文件的播放
+- \<audio>：不适用插件的情况下，原生支持音频格式文件的播放
+- \<input>新增了类型
+
+## 24. 属性选择器
+
+```css
+/* 选择有foo属性的元素 */
+div[foo] {...}
+/* 选择有foo属性，且其值为bar的元素 */
+div[foo="bar"] {...}
+/* 选择有foo属性，并且该属性是一个以空格作为分隔的值列表，其中至少有一个值为bar，的元素 */
+div[foo~="bar"] {...}
+/* 选择有foo属性，且其值由bar开头的元素 */
+div[foo^="bar"] {...}
+/* 选择有foo属性，且其值为bar结尾的元素 */
+div[foo$="bar"] {...}
+/* 选择有foo属性，且其值包含bar的元素 */
+div[foo*="bar"] {...}
+/* 选择有foo属性，且其值为bar或以bar开头的元素 */
+div[foo|="bar"] {...}
+```
+
+## 25. 结构伪类选择器
+
+根据`文档结构`选择元素，常用于选择父级元素里的子元素
+
+| 选择器                                            | 作用                                           |
+| ------------------------------------------------- | ---------------------------------------------- |
+| E:first-child                                     | 第一个子元素                                   |
+| E:last-child                                      | 最后一个子元素                                 |
+| E:nth-child(<span style="color:green">n</span>)   | 第 <span style="color:green">n</span> 个子元素 |
+| E:first-of-type                                   |                                                |
+| E:last-of-type                                    |                                                |
+| E:nth-of-type(<span style="color:green">n</span>) |                                                |
+
+- E:nth-child()
+  - 数字
+  - odd / even
+  - 表达式：`-n+5`，前五个（n从0开始，超出的不存在的元素被忽略）
