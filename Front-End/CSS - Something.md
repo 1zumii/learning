@@ -697,16 +697,64 @@ div[foo|="bar"] {...}
 
 根据`文档结构`选择元素，常用于选择父级元素里的子元素
 
-| 选择器                                            | 作用                                           |
-| ------------------------------------------------- | ---------------------------------------------- |
-| E:first-child                                     | 第一个子元素                                   |
-| E:last-child                                      | 最后一个子元素                                 |
-| E:nth-child(<span style="color:green">n</span>)   | 第 <span style="color:green">n</span> 个子元素 |
-| E:first-of-type                                   |                                                |
-| E:last-of-type                                    |                                                |
-| E:nth-of-type(<span style="color:green">n</span>) |                                                |
+| 选择器                                            | 作用                                                |
+| ------------------------------------------------- | --------------------------------------------------- |
+| E:first-child                                     | 第一个子元素                                        |
+| E:last-child                                      | 最后一个子元素                                      |
+| E:nth-child(<span style="color:green">n</span>)   | 第 <span style="color:green">n</span> 个子元素      |
+| E:first-of-type                                   | 指定元素E的第一个                                   |
+| E:last-of-type                                    | 指定元素E的最后一个                                 |
+| E:nth-of-type(<span style="color:green">n</span>) | 指定元素E的第 <span style="color:green">n</span> 个 |
 
 - E:nth-child()
   - 数字
   - odd / even
   - 表达式：`-n+5`，前五个（n从0开始，超出的不存在的元素被忽略）
+
+```html
+<body>
+    <!-- 选择aaa，以nth-child的方式 -->
+    <section>
+        <div class="aaa"></div>
+        <div class="bbb"></div>
+    </section>
+</body>
+```
+
+```css
+<style>
+    section:nth-child(1) {
+        ...
+    }
+</style>
+```
+
+```html
+<body>
+    <!-- 选择aaa，以nth-of-type的方式 -->
+    <section>
+        <div class="aaa"></div>
+        <div class="bbb"></div>
+    </section>
+</body>
+```
+
+```css
+<style>
+    section div:nth-of-child(1) {
+        ...
+    }
+</style>
+```
+
+## 26. 伪类选择器
+
+| 选择符   | 作用                     |
+| -------- | ------------------------ |
+| ::before | 在元素内部的前面插入内容 |
+| ::after  | 在元素内部的后面插入内容 |
+
+- 用 CSS 创建新的标签元素，简化HTML结构
+- 在文档流中<b style='color:deeppink'>不可见</b>，因而称为`伪元素`
+- before 和 after 的`content属性`为必填
+- 创建的伪元素，<u>默认</u>为<b style='color:deeppink'>行内元素</b>
