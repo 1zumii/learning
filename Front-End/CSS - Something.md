@@ -493,7 +493,7 @@ div {
 ### after伪元素清除浮动
 
 ```css
-.father {
+.father::after {
     content: "";
     display: block;
     height: 0;
@@ -505,12 +505,12 @@ div {
 ### 双伪元素清除浮动
 
 ```css
-.father:before,
-.father:after {
+.father::before,
+.father::after {
     content: "";
     display: table;
 }
-.father:after {
+.father::after {
     clear: both;
 }
 ```
@@ -537,7 +537,7 @@ div {
 
 - top，bottom，left，right
 
-### 特殊特性
+### 特性
 
 - `行内元素`添加绝对/固定定位，可以直接设置 width，height
 - `块级元素`添加绝对/固定定位，不设置宽高，默认大小为内容的大小
@@ -740,11 +740,9 @@ div[foo|="bar"] {...}
 ```
 
 ```css
-<style>
-    section div:nth-of-child(1) {
-        ...
-    }
-</style>
+section div:nth-of-child(1) {
+    ...
+}
 ```
 
 ## 26. 伪类选择器
@@ -758,3 +756,88 @@ div[foo|="bar"] {...}
 - 在文档流中<b style='color:deeppink'>不可见</b>，因而称为`伪元素`
 - before 和 after 的`content属性`为必填
 - 创建的伪元素，<u>默认</u>为<b style='color:deeppink'>行内元素</b>
+- 伪元素是子元素
+
+## 27. box-sizing 属性
+
+- 定义了如何计算一个元素的`总宽度`和`总高度`
+
+- content-box
+  - width = 内容的宽度
+  - height = 内容的高度
+- border-box
+  - width = border + padding + 内容的宽度
+  - height = border + padding + 内容的高度
+
+## 28. calc() 函数
+
+```html
+<body>
+    <!-- son总是比father小30px -->
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+```
+
+```css
+.son {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+}
+```
+
+## 29. 2D 转换
+
+### 转换 transform
+
+- 值为 \<transform-function>，或其数组
+- 综合写法多个变形函数时，最好将 translate() 放在最前面
+
+### transform-function
+
+- 移动 translate => translateX，translateY
+  - 百分比 \<percentage> 是`相对自身`的大小
+  - 对行内元素没有效果
+  - [translate() 和 absolute position 的对比](https://github.com/Rashomon511/LearningRecord/issues/302)
+  - [transform:translate 对定位元素的影响](https://www.cnblogs.com/zhuzhengya/p/5596612.html)
+- 旋转 rotate => rotate3d，rotateX，rotateY，rotateZ
+  - 单位：deg，rotate(45deg)
+- 缩放 scale => scaleX，scaleY
+  - 缩放时不会影响其他盒子
+  - 可以设置缩放的中心点
+
+### 二维坐标系
+
+- 原点：左上角
+- x轴：水平向右
+- y轴：垂直向下
+
+### transform-origin
+
+- 更改一个元素变形的原点
+
+```css
+element {
+    transform-origin: x y
+}
+```
+
+## 30. 动画 animation
+
+- 定义动画：`@keyframes`
+- 使用动画：`animation属性`
+
+|       动画常用属性        | 描述                                |
+| :-----------------------: | ----------------------------------- |
+|        @keyframes         | 定义动画序列                        |
+|         animation         | 动画属性简写                        |
+|      animation-name       | 使用的序列名称                      |
+|    animation-duration     | 动画的一个周期时间                  |
+| animation-timing-function | 动画的速度曲线函数                  |
+|      animation-delay      | 动画滞后时间/何时开始               |
+| animation-iteration-count | 动画播放的次数                      |
+|    animation-direction    | 规定动画在下一周期是否逆向播放      |
+|   animation-play-state    | 规定动画在运行/暂停                 |
+|    animation-fill-mode    | 规定动画结束后的状态：保持/回到起始 |
+
