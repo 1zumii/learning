@@ -41,9 +41,14 @@ transition: property duration timing-function delay
 - 持续时间`transition-duration`
   - 单位：s，必填
   - 例如：`.5s`
-- 运动曲线`transition-timing-function` *可省略*
-  
-  [<timing-function>](https://developer.mozilla.org/zh-CN/docs/Web/CSS/timing-function)
+- 运动曲线[函数](https://developer.mozilla.org/zh-CN/docs/Web/CSS/timing-function)`transition-timing-function` *可省略*
+  - linear
+  - ease
+  - ease-in
+  - ease-out
+  - ease-in-out
+  - steps()
+
 - 延时`transition-delay` *可省略*
   - 单位：s
   - 可以设置延迟的触发时间
@@ -825,17 +830,16 @@ element {
 - 定义动画：`@keyframes`
 - 使用动画：`animation属性`
 
-|       动画常用属性        | 描述                                |
-| :-----------------------: | ----------------------------------- |
-|        @keyframes         | 定义动画序列                        |
-|         animation         | 动画属性简写                        |
-|      animation-name       | 使用的序列名称                      |
-|    animation-duration     | 动画的一个周期时间                  |
-| animation-timing-function | 动画的速度曲线函数                  |
-|      animation-delay      | 动画滞后时间/何时开始               |
-| animation-iteration-count | 动画播放的次数                      |
-|    animation-direction    | 规定动画在下一周期是否逆向播放      |
-|   animation-play-state    | 规定动画在运行/暂停                 |
-|    animation-fill-mode    | 规定动画结束后的状态：保持/回到起始 |
+|       动画常用属性        | 描述                                                         |
+| :-----------------------: | ------------------------------------------------------------ |
+|        @keyframes         | 定义动画序列                                                 |
+|         animation         | 动画属性简写                                                 |
+|      animation-name       | 使用的序列名称                                               |
+|    animation-duration     | 动画的一个周期时间                                           |
+| animation-timing-function | 动画的[速度曲线函数](https://developer.mozilla.org/zh-CN/docs/Web/CSS/timing-function) |
+|      animation-delay      | 动画滞后时间/何时开始                                        |
+| animation-iteration-count | 动画播放的次数                                               |
+|    animation-direction    | 规定动画在下一周期是否逆向播放                               |
+|   animation-play-state    | 规定动画在运行/暂停                                          |
+|    animation-fill-mode    | 规定动画结束后的状态：保持/回到起始                          |
 
-- 
