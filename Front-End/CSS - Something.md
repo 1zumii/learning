@@ -42,11 +42,8 @@ transition: property duration timing-function delay
   - 单位：s，必填
   - 例如：`.5s`
 - 运动曲线`transition-timing-function` *可省略*
-  - linear：匀速
-  - ease：逐渐慢下来
-  - ease-in：加速
-  - ease-out：减速
-  - ease-in-out：先加速后减速
+  
+  [<timing-function>](https://developer.mozilla.org/zh-CN/docs/Web/CSS/timing-function)
 - 延时`transition-delay` *可省略*
   - 单位：s
   - 可以设置延迟的触发时间
@@ -841,3 +838,4 @@ element {
 |   animation-play-state    | 规定动画在运行/暂停                 |
 |    animation-fill-mode    | 规定动画结束后的状态：保持/回到起始 |
 
+- 
