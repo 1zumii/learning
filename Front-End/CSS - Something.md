@@ -825,6 +825,11 @@ element {
 }
 ```
 
+### transform-style
+
+- 设置元素的子元素是位于 3D 空间中还是平面中
+- 和 perspective 一样，设置给父级元素
+
 ## 30. 动画 animation
 
 - 定义动画：`@keyframes`
