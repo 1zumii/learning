@@ -798,7 +798,7 @@ section div:nth-of-child(1) {
 
 ### transform-function
 
-- 移动 translate => translateX，translateY
+- 移动 translate => translateX，translateY，translateZ，translate3d
   - 百分比 \<percentage> 是`相对自身`的大小
   - 对行内元素没有效果
   - [translate() 和 absolute position 的对比](https://github.com/Rashomon511/LearningRecord/issues/302)
@@ -842,4 +842,13 @@ element {
 |    animation-direction    | 规定动画在下一周期是否逆向播放                               |
 |   animation-play-state    | 规定动画在运行/暂停                                          |
 |    animation-fill-mode    | 规定动画结束后的状态：保持/回到起始                          |
+
+## 31. 透视 perspective
+
+- 产生近大远小的立体效果
+- `perspective属性`加在元素的父级元素上
+- 指定了`观察者`与 z=0 平面的距离
+
+> perspective: none | \<length>
+> transform: perspective(*length*)
 
