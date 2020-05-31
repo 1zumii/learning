@@ -339,3 +339,12 @@ new Promise((resolve,reject) => {
 
 - 跟传统的try/catch代码块不同的是，如果没有使用`catch`方法指定错误处理的回调函数， Promise对象抛出的错误**不会**传递到外层代码，即不会有任何反应。
 
+#### 中断Promise链
+
+- 返回一个`pending`的 Promise 
+
+  ```javascript
+  return new Promise(() => {})
+  ```
+
+  
