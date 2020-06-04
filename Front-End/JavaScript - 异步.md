@@ -170,13 +170,14 @@ async function 请求() {
 
 #### Promise的状态改变
 
-- `pending` => `resolved`，value（成功的结果数据）
+- `pending` => `fulfilled`，value（成功的结果数据）
 - `pending` => `rejected`，reason（失败的结果数据）
 - 如果抛出异常，且此时状态为 pending => reject(reason = error)
 
 #### 执行流程
 
 - 执行了异步操作后，`promise对象`的状态发生变化
+  - 状态改变时，如果已经指定了回调函数 onResolved，onRejected 将会**立即**`异步执行`**所有**的成功/失败的回调
 - 执行回调函数`then()`，`catch()`
 - 返回一个`新的promise对象`（由 then 和 catch 返回）
 
@@ -243,7 +244,7 @@ console.log(7)
 - 新promise对象的`结果状态`
   - 由`then()`指定的回调函数，执行的结果决定
   - 如果抛出异常，新promise的状态变为`rejected`，reason为抛出的异常
-  - 如果返回非promise实例对象的任意值（无返回，视为返回`undefined`），新promise的状态变为`resolved`，value为返回的值
+  - 如果返回非promise实例对象的任意值（无返回，视为返回`undefined`），新promise的状态变为`fulfilled`，value为返回的值
   - 如果返回的是另一个`新的promise`，则直接返回此promise实例对象，此promise的结果作为新promise的结果
 
 ```javascript
