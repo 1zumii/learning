@@ -359,11 +359,12 @@ Promise.race = function (promises) {
     return new Promise((resolve, reject) => {
         // 遍历所有 promise
         promises.forEach((p,index)=>{
-            p.then(resolve,reject)
+            Promise.resolve(p).then(resolve,reject)
         })
     })
 }
 ```
 
-- 遍历的过程如果已经出现结果，then()方法立刻就能改变返回的 Promise 的状态
-- 如果遍历的时候还未得到结果，then()方法是将回调函数 onResolved，onRejected **事先绑定**到对应的 promise 实例上，一旦出现结果，便可以触发回调，从而改变返回的 Promise 的状态
+- 遍历的过程如果已经出现结果，`then()`方法立刻就能改变返回的 Promise 的状态
+- 如果遍历的时候还未得到结果，`then()`方法是将回调函数 onResolved，onRejected **事先绑定**到对应的 promise 实例上，一旦出现结果，便可以触发回调，从而改变返回的 Promise 的状态
+- 使用`Promise.resolve()`包装 promises 数组里的每一项，确保即便是非 promise 类型的输入，也可以作为一个 promise 实例返回结果，而无需再单独判断其类型
