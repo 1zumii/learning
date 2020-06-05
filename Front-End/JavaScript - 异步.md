@@ -368,3 +368,44 @@ Promise.race = function (promises) {
 - 遍历的过程如果已经出现结果，`then()`方法立刻就能改变返回的 Promise 的状态
 - 如果遍历的时候还未得到结果，`then()`方法是将回调函数 onResolved，onRejected **事先绑定**到对应的 promise 实例上，一旦出现结果，便可以触发回调，从而改变返回的 Promise 的状态
 - 使用`Promise.resolve()`包装 promises 数组里的每一项，确保即便是非 promise 类型的输入，也可以作为一个 promise 实例返回结果，而无需再单独判断其类型
+
+## 三、事件循环 Event Loop
+
+- 调用栈
+- 宏队列 MacroTasks
+- 微队列 MicroTasks
+
+### 执行过程
+
+- JS 引擎首先必须先执行所有的初始化同步任务代码
+- 每次准备取出第一个`宏任务`执行前, 都要将**所有**的`微任务`一个一个取出来执行
+
+```javascript
+setTimeout(() => {
+    console.log("0")
+}, 0)
+new Promise((resolve, reject) => {
+    console.log("1")
+    resolve()
+}).then(() => {
+    console.log("2")
+    new Promise((resolve, reject) => {
+        console.log("3")
+        resolve()
+    }).then(() => {
+        console.log("4")
+    }).then(() => {
+        console.log("5")
+    })
+}).then(() => {
+    console.log("6")
+})
+new Promise((resolve, reject) => {
+    console.log("7")
+    resolve()
+}).then(() => {
+    console.log("8")
+})
+```
+
+> 1 7 2 3 8 4 6 5 0
