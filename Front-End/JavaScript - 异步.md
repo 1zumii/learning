@@ -348,4 +348,22 @@ new Promise((resolve,reject) => {
   return new Promise(() => {})
   ```
 
-  
+#### 手写Promise.race()方法的个人理解
+
+```javascript
+/*
+ *返回一个 promise，一旦某个 promise 解决或拒绝， 返回的 promise 就会解决或拒绝。
+ */
+Promise.race = function (promises) {
+    // 返回新的 promise 对象
+    return new Promise((resolve, reject) => {
+        // 遍历所有 promise
+        promises.forEach((p,index)=>{
+            p.then(resolve,reject)
+        })
+    })
+}
+```
+
+- 遍历的过程如果已经出现结果，then()方法立刻就能改变返回的 Promise 的状态
+- 如果遍历的时候还未得到结果，then()方法是将回调函数 onResolved，onRejected **事先绑定**到对应的 promise 实例上，一旦出现结果，便可以触发回调，从而改变返回的 Promise 的状态
