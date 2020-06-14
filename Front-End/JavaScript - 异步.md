@@ -497,6 +497,7 @@ then12
 - await：用于等待一个`Promise`对象
   - 返回其 then() 中的 reason
   - 如果 Promise 为 rejected，则抛出异常
+  - 如果 await 其后得到的值不是一个 Promise 对象，则会将其包裹在`Promise.resolve()`中
 - await **只能**在异步函数 async function 中使用
 - async 会返回一个Promise，所以返回值可以使用 then()
 
