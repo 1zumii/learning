@@ -186,7 +186,7 @@ async function 请求() {
 #### Promise.all(iterable)
 
 - `iterable`参数内所有promise都完成，或不包含promise => resolve(value**s**)
-- 参数中有一个promise失败，返回失败 => reject(reason)
+- 参数中有一个promise失败，返回失败的promise => reject(reason)
 
 #### Promise.race(iterable)
 
@@ -220,6 +220,11 @@ p.then(value => {
 
 - 如果先指定回调，当状态发生改变时，回调函数就会调用，得到数据
 - 如果先改变状态，当回调函数指定的时候，回调函数就会调用，得到数据
+
+> 引申：then方法是同步顺序执行的，其中传入的 onResolved，onRejected 才是异步执行的函数
+>
+> - 执行到 then 时，状态已改变，则会将回调函数，**立即**放入微队列中 => 立即异步执行
+> - 如果状态还未改变，则回调函数会监听其 Promise 的状态变化。一旦状态改变，则将对应的回调放入微队列中。
 
 #### executor函数的执行
 
@@ -409,3 +414,112 @@ new Promise((resolve, reject) => {
 ```
 
 > 1 7 2 3 8 4 6 5 0
+
+## 四、Promise 例题
+
+[参考](https://juejin.im/post/5c9a43175188252d876e5903#heading-3)
+
+### 例题一
+
+```javascript
+new Promise((resolve, reject) => {
+    console.log("promise1")
+    resolve()
+}).then(() => {
+    console.log("then11")
+    new Promise((resolve, reject) => {
+        console.log("promise2")
+        resolve()
+    }).then(() => {
+        console.log("then21")
+        // return Promise.resolve(undefined)
+    }).then(() => {
+        console.log("then23")
+        // return Promise.resolve(undefined)
+    })
+    // return Promise.resolve(undefined)
+}).then(() => {
+    console.log("then12")
+    // return Promise.resolve(undefined)
+})
+```
+
+```bash
+promise1
+then11
+promise2
+then21
+then12
+then23
+```
+
+> 无返回值的then方法末尾，应视作返回一个fulfilled状态且值为undefined的Promise，return语句顺序执行
+
+### 例题二
+
+```javascript
+new Promise((resolve, reject) => {
+    console.log("promise1")
+    resolve()
+}).then(() => {
+    console.log("then11")
+    return new Promise((resolve, reject) => {
+        console.log("promise2")
+        resolve()
+    }).then(() => {
+        console.log("then21")
+        // return Promise.resolve(undefined)
+    }).then(() => {
+        console.log("then23")
+        // return Promise.resolve(undefined)
+    })
+}).then(() => {
+    console.log("then12")
+    // return Promise.resolve(undefined)
+})
+```
+
+```bash
+promise1
+then11
+promise2
+then21
+then23
+then12
+```
+
+> 第6行return了一个then了两次的Promise。then方法会返回一个新的Promise供后续的then使用，所以第16行的then方法是绑定着第12行的then方法返回的Promise，状态取决于它。
+
+## async/await
+
+- async function：通过一个**隐式**的`Promise`返回其结果
+
+- await：用于等待一个`Promise`对象
+  - 返回其 then() 中的 reason
+  - 如果 Promise 为 rejected，则抛出异常
+- await **只能**在异步函数 async function 中使用
+- async 会返回一个Promise，所以返回值可以使用 then()
+
+### 多个await操作的串行和并行
+
+- 串行
+
+```javascript
+const funcA = async params => {
+	const resB = await getAsyncB()
+	const resC = await getAsyncC()
+}
+```
+
+- 并行
+
+```javascript
+const funcA = async params => {
+	const promiseB = getAsyncB()
+	const promiseC = getAsyncC()
+	const resB = await promiseB
+	const resC = await promiseC
+}
+```
+
+> 利用了 promise 的 executor 是立即执行异步操作的特性
