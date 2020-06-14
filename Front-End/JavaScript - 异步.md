@@ -177,7 +177,7 @@ async function 请求() {
 #### 执行流程
 
 - 执行了异步操作后，`promise对象`的状态发生变化
-  - 状态改变时，如果已经指定了回调函数 onResolved，onRejected 将会**立即**`异步执行`**所有**的成功/失败的回调
+  - <u>状态改变时</u>，如果已经指定了回调函数 onResolved，onRejected 将会**立即**`异步执行`**所有**的成功/失败的回调
 - 执行回调函数`then()`，`catch()`
 - 返回一个`新的promise对象`（由 then 和 catch 返回）
 
@@ -228,7 +228,7 @@ new Promise((resolve,reject) => {
     console.log(2)
     resolve(3)
 }).then(
-    value => console.log(5)
+    value => console.log(5, value)
 )
 console.log(7)
 ```
