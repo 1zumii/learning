@@ -44,7 +44,22 @@
 
 以此避免`resetFields()`方法的失效和其他问题。
 
-![image-20200315130632729](image-20200315130632729.png)
+```jsx
+<FormItem
+    {...WtFormLayout.formItemLayout}
+    label={<span>样本名称<WtHelpTooltip title="用户命名或者条形码" /></span>}
+>
+    <div style={{ position: 'relative' }}>
+        {this.tipSrcCode()}
+        {getFieldDecorator('srcCode', srcCodeOption)(
+            <Input
+                onBlur={e => this.checkSrcCode(e.target.value)}
+                onChange={e => this.setSrcCodeValue(e.target.value)}
+            />
+        )}
+    </div>
+</FormItem>
+```
 
 #### 自定义组件的注册与传值
 
