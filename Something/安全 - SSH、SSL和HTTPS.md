@@ -1,6 +1,6 @@
 1. [密码学笔记 - ruanyifeng.com](http://www.ruanyifeng.com/blog/2006/12/notes_on_cryptography.html)
 2. [公钥，私钥和数字签名这样最好理解 - CSDN](https://blog.csdn.net/21aspnet/article/details/7249401)
-3. [SSH原理与运用（一）：远程登录 - ruanyifeng.com](https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html)
+3. [HTTPS原理全解析 - bilibili](https://www.bilibili.com/video/BV1w4411m7GL)
 
 ## 加密
 
@@ -17,6 +17,7 @@
 - `公钥`和`私钥`是成对的，它们**互相解密**。
   - 公钥加密 => 私钥解密
   - 私钥数字签名 => 公钥验证
+- `非对称加密`的**计算量**会比`对称加密`的大
 
 ### 数字签名
 
@@ -33,7 +34,11 @@
 - 数字证书同数字签名和内容一并发送
 - 收方用**CA的公钥**解开数字证书，得到用户的公钥 ...
 
-## SSH原理与运用
+## SSH
 
-- SSH是一种网络协议，用于计算机之间的**加密登录**
+- SSH是创建在`应用层`和`传输层`基础上的安全协议，为计算机上的Shell（壳层）提供安全的传输和使用环境
+- 通俗点讲就是只有`SSH客户端`，和`SSH服务器`之间的通信才能使用这个协议，其他软件服务**无法使用**它
 - 如果要在Windows系统中使用SSH，会用到`PuTTY`
+
+## HTTPS
+

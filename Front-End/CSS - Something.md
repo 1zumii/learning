@@ -340,7 +340,7 @@ div {
 
 - box-shadow: <u>x</u>，<u>y</u>，blur，spread，color，*inset*
   - x，y：阴影的水平➡、垂直⬇距离，允许负值
-  - blur：阴影的虚实程度，0px => 实心阴影
+  - blur：阴影的虚实程度，0px => 实心阴影，越大越虚
   - spread：阴影的缩放程度，负值为阴影小于盒子尺寸
   - color：阴影颜色
   - inset：默认不写为外阴影`outset`
