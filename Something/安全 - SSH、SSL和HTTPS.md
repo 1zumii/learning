@@ -7,8 +7,10 @@
 ### 加密方法
 
 - 单钥加密`private key cryptography`
+  - 对称加密/共享密钥加密
   - 加密和解密过程都用同一套密码
 - 双钥加密`public key cryptography`
+  - 非对称加密/公开公钥加密
   - 加密和解密过程用的是两套密码（公钥、私钥）
 
 ### 双钥加密
@@ -84,8 +86,36 @@
 - 思路
 
   - Server 将自己的 pk 转给`CA`获得`License`= func(**csk**,pk)
-  - Client 收到 Server 传来的 License，通过 Client **内置**的很多 cpk 解密 License 得到 pk
+  - Client 收到 Server 传来的 License，通过 Client **内置**在浏览器的很多 cpk 解密 License 得到 pk
 
   - ... ...
 
-### 非对称加密协商的过程
+## SSL/TLS 握手过程
+
+- 安全地协商出一份对称加密的`密钥`
+
+![image-20200712221742723](image-20200712221742723.png)
+
+1. ClientHello
+   - 客户端通过发送 Client Hello 报文开始 SSL通信
+   - 其中包含客户端生成的随机数`Random1`/**ClientRandom**
+2. ServerHello
+   - 服务器生成的随机数`Random2`/**ServerRandom**
+3. Certificate
+   - Server下发自己的License
+   - License中包含服务器上的公钥pk
+4. ServerHelloDone
+   - 最初阶段的SSL握手协商**部分**结束
+
+5. ClientKeyExchange (Client)
+   - 用（3）中得到的服务器公钥 pk，加密`Random3` => **PreMaster Secret**
+   - 将 PreMaster Secret 发送给服务器
+6. Change Cipher Spec
+   - 报文会提示服务器，在此报文之后的通信会采用 PreMaster Secret 密钥加密
+
+7. Handshake:Finished (Client)
+8. Change Cipher Spec (Server)
+9. Handshake:Finished (Server)
+
+> Master Secret = f(Random1, Random2, PreMaster Secret)
+
