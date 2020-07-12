@@ -64,3 +64,28 @@
 - 私钥 sk：Server持有
 - 黑客仍旧能充当 Client 获取 pk，因此 Server => Client 是不安全的
 - 黑客无法获取 sk，Client => Server 是安全的
+
+### 非对称加密 + 对称加密
+
+- 思路
+  - 通过`非对称加密`，协商出临时的 k
+  - 再通过 k 使用`对称加密`，传输数据
+
+- 协商出的 k，每个 Client 都有一个
+
+- 缺陷：中间人攻击
+
+  Client 第一次请求 pk 时，无法知道 pk 是来自服务器，还是来自黑客
+
+### 非对称加密 + 对称加密 + CA
+
+- 证书颁发机构，**C**ertificate **A**uthority
+
+- 思路
+
+  - Server 将自己的 pk 转给`CA`获得`License`= func(**csk**,pk)
+  - Client 收到 Server 传来的 License，通过 Client **内置**的很多 cpk 解密 License 得到 pk
+
+  - ... ...
+
+### 非对称加密协商的过程
