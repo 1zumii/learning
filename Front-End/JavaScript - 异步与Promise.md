@@ -183,6 +183,8 @@ async function 请求() {
 
 ### 2.2 Promise的使用
 
+<u>异步请求**并行**操作</u>
+
 #### Promise.all(iterable)
 
 - `iterable`参数内所有promise都完成，或不包含promise => resolve(value**s**)
