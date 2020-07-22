@@ -37,7 +37,7 @@
 
 - Example
 
-  ![](./20200108111632.png)
+  ![](../_images/image-20200108111632.png)
 
   创建与department表相同结构的表department1，并将departName设为主键，departmentID上建立一个索引，并不插入旧表数据
 

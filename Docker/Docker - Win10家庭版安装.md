@@ -23,7 +23,7 @@
 
 例如：D:/Program Files/Git**/bin/bash.exe**
 
-![image-20200204233451068](image-20200204233451068.png)
+![](../_images/image-20200204233451068.png)
 
 ### 4.[Docker虚拟机文件地址修改](https://blog.csdn.net/chengly0129/article/details/68947265)
 

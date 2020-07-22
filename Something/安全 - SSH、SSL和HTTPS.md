@@ -94,7 +94,7 @@
 
 - 安全地协商出一份对称加密的`密钥 MasterSecret` 
 
-![image-20200712221742723](image-20200712221742723.png)
+![](../_images/image-20200712221742723.png)
 
 1. ClientHello
    - 客户端通过发送 Client Hello 报文开始 SSL通信

@@ -3,7 +3,7 @@
 - `__proto__`和`constructor`属性是**对象**所独有的
 - `prototype`属性是**函数**所独有的 *函数也是一种对象*
 
-![img](image-20190311194017886.png)
+![](../_images/image-20190311194017886.png)
 
 *图中蓝色方块中，大写的部分其实是个**构造函数***
 
@@ -42,7 +42,7 @@ f.__proto__ === Foo.prototype;	// true
 - constructor 属性的终点就是 Function 这个函数
 - 实例化得到的对象其实自己是不具有 constructor 属性
 
-![image-20200717195336828](image-20200717195336828.png)
+![](../_images/image-20200717195336828.png)
 
 ## 手写 instanceOf
 

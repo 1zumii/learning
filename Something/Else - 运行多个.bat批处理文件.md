@@ -4,6 +4,7 @@
 4. [start命令 运行多个.bat](https://blog.51cto.com/leomars/1181119)
 5. [call命令 运行多个.bat](http://www.dovov.com/bat-bat.html)
 
-![image-20200207234637959](image-20200207234637959.png)
+![](../_images/image-20200207234637959.png)
 
-![image-20200207234646097](image-20200207234646097.png)
+![](../_images/image-20200207234646097.png)
+

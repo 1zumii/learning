@@ -26,5 +26,5 @@
 - `@RequestBody`：用于读取 HTTP 请求的内容（字符串），通过 Spring MVC 提供的 HttpMessageConverter 接口将读到的内容转换为 JSON、XML 等格式的数据并绑定到 Controller 方法的参数上；
 - `@PathVariable`：用于接收请求路径参数，将其绑定到方法参数上；
 
-![](image-20200716113734430.png)
+![](../_images/image-20200716113734430.png)
 

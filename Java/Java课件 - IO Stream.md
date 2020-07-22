@@ -1,4 +1,4 @@
-![](image-20200129162559961.png)
+![](../_images/image-20200129162559961.png)
 
 ### 1.File类的构造方法
 
@@ -29,7 +29,7 @@ File f2 = new File("D:\\Java\\Hello.java");
 | 输入流 | InputStream  | Reader |
 | 输出流 | OutputStream | Writer |
 
-![image-20200129164809140](image-20200129164809140.png)
+![](../_images/image-20200129164809140.png)
 
 以`字节流`的方式读: 读8次，8个字节
 

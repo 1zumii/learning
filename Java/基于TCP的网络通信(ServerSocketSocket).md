@@ -8,8 +8,8 @@
 - 通信都是通过一对`InputStream`和`OutputStream`进行的
 - 通信结束后，两端分别关闭对应的`Socket`
 
-![基于TCP的Java Socket连接过程](image-20200129162148343.png)
+![基于TCP的Java Socket连接过程](../_images/image-20200129162148343.png)
 
 ### 2.基于TCP的Socket编程实例
 
-![](image-20200129162253146.png)
+![](../_images/image-20200129162253146.png)

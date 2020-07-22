@@ -7,7 +7,7 @@
 - 版本库：工作区有一个隐藏目录`.git`，这个不算工作区，而是Git的版本库
 - [工作区、暂存区、版本库 - 廖雪峰](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013745374151782eb658c5a5ca454eaa451661275886c6000)
 
-![image-20200207230320571](image-20200207230320571.png)
+![](../_images/image-20200207230320571.png)
 
 ### 3.[Git教程](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
@@ -54,7 +54,7 @@
 
   - 关联一个远程库 git remote add origin git@server-name:path/repo-name.git
   
-    ![image-20200207230600362](image-20200207230600362.png)
+    ![](../_images/image-20200207230600362.png)
   
   - 第一次推送 **master** 分支的所有内容`git push -u origin master`
   - 推送最新修改`git push origin master`
@@ -63,7 +63,7 @@
 
   - git clone
 
-    ![image-20200207230705923](image-20200207230705923.png)
+    ![](../_images/image-20200207230705923.png)
 
 - [分支删除](https://blog.csdn.net/qq_32452623/article/details/54340749)
 
@@ -75,7 +75,7 @@
 
 ### 5.[生成/添加SSH公钥(gitee)](https://gitee.com/help/articles/4181#article-header0)
 
-![image-20200207230755400](image-20200207230755400.png)
+![](../_images/image-20200207230755400.png)
 
 ### 6.[使用Git将码云上的代码Clone至本地](https://www.cnblogs.com/yi0921/p/7928985.html)
 

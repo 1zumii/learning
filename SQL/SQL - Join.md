@@ -1,10 +1,10 @@
 user_info
 
-![user_info](20200108172906.png)
+![user_info](../_images/image-20200108172906.png)
 
 doc_info
 
-![20200108172914](20200108172914.png)
+![20200108172914](../_images/image-20200108172914.png)
 
 
 
@@ -21,7 +21,7 @@ LEFT JOIN doc_info
 ON user_info.username = doc_info.creator;
 ```
 
-![20200108172929](20200108172929.png)
+![20200108172929](../_images/image-20200108172929.png)
 
 
 
@@ -36,4 +36,4 @@ RIGHT JOIN user_info
 ON user_info.username = doc_info.creator;
 ```
 
-![20200108172939](20200108172939.png)
+![20200108172939](../_images/image-20200108172939.png)

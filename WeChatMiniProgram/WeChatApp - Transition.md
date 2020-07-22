@@ -44,3 +44,4 @@ Page({
 
 > 通过 data 中的真假值，使得 wxml 中标签的 class 按条件加入
 > 借添加 class 的方式来达到样式发生变化的效果，来触发 transition
+

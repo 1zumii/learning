@@ -9,4 +9,4 @@
 
 ### 3.[Windows10 深度美化技巧](https://www.zhihu.com/question/39002007/answer/246169780)
 
-![image-20200205001900166](image-20200205001900166.png)
+![](../_images/image-20200205001900166.png)

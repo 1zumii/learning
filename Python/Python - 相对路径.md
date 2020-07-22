@@ -1,6 +1,6 @@
 [原文链接](https://blog.csdn.net/m0_37693335/article/details/81474995)
 
-![image-20200226121248943](image-20200226121248943.png)
+![](../_images/image-20200226121248943.png)
 
 ### 1.xxx.py打开a.txt
 
