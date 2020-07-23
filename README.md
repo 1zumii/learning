@@ -1,4 +1,3 @@
-<h1 style="border:none;text-align:center">目 录</h1>
 ## Algorithm
 - [动态规划 - 完全背包问题](Algorithm/「动态规划」完全背包问题.md)
 - [动态规划 - 总结](Algorithm/「动态规划」总结.md)
