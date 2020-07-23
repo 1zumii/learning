@@ -12,5 +12,5 @@ with open('./README.md', 'w', encoding='utf_8') as f:
 				matchFileName = re.match(r'^「(.+)」(.+)\.md$', md)
 				tag = matchFileName.group(1)
 				title = matchFileName.group(2)
-				fileWrite.append('\t* [{}: {}]({}/{})\n'.format(tag, title, d, md))
+				fileWrite.append('\t* [{} - {}]({}/{})\n'.format(tag, title, d, md))
 	f.writelines(fileWrite)
