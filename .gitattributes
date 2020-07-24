@@ -1,1 +1,2 @@
 *.py linguist-language=markdown
+*.bat linguist-language=markdown
