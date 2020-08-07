@@ -2,7 +2,7 @@
 import os
 import re
 
-with open('./README.md', 'w', encoding='utf_8') as f:
+with open('./README.md', 'w') as f:
 	fileWrite = []
 	directories = os.listdir()
 	for d in directories:
