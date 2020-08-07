@@ -20,5 +20,5 @@ fs.readdir('./', (err, directories) => {
 			})
 		}
 	})
-	fs.writeFileSync('./READMEE.md', writeContent)
+	fs.writeFileSync('./README.md', writeContent)
 })
