@@ -16,7 +16,7 @@ fs.readdir('./', (err, directories) => {
 				const matchGroup = file.match(reg)
 				const tag = matchGroup[1]
 				const title = matchGroup[2]
-				writeContent += `- [${tag} - ${title}](${tag}/${file})\n`
+				writeContent += `- [${tag} - ${title}](${dir}/${file})\n`
 			})
 		}
 	})
