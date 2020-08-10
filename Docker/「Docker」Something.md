@@ -9,7 +9,7 @@
 - 镜像Tag：每个镜像都可以打上一个或多个标签
 - 镜像Repository：每个镜像存储在一个仓库中
 - `Repository:TAG`：唯一标识了一个镜像
-- 删除镜像：`docker rmi [OPTIONS] IMAGE [IMAGE...]`
+- 删除镜像：`docker rmi [OPTIONS] <IMAGE> [IMAGE...]`
   - `-f`：强制删除
   - `--no-prune`：不移除该镜像的过程镜像，默认移除
 
