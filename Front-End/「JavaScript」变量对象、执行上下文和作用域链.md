@@ -1,15 +1,17 @@
 - [关于javascript中的从堆栈内存到执行上下文](https://github.com/ershing/RookieAngle/blob/master/javascript/executionContext.md)
-- [JavaScript高级程序语言设计：4.2 执行环境及作用域](https://www.ituring.com.cn/book/946)
+- [JS基础进阶：2. 详解执行上下文](https://mp.weixin.qq.com/s?__biz=MzI4NjE3MzQzNg==&mid=2649865900&idx=1&sn=a8fefbc436283b638eaeba1d7bd8496d&scene=19#wechat_redirect)
 - [关于javascript中的变量对象和活动对象](https://github.com/ershing/RookieAngle/blob/master/javascript/javascriptVariableObject.md)
 - [JS基础进阶：3. 变量对象](https://mp.weixin.qq.com/s?__biz=MzI4NjE3MzQzNg==&mid=2649865890&idx=1&sn=345db9d600329796d5dcfc0ee7eea303&scene=19#wechat_redirect)
 - [关于javascript中的作用域和作用域链](https://github.com/ershing/RookieAngle/blob/master/javascript/scopeChain.md)
+- [JS基础进阶：4. 作用域与作用域链](https://mp.weixin.qq.com/s?__biz=MzI4NjE3MzQzNg==&mid=2649865906&idx=1&sn=f6e6056218e5d382555b0168af518761&scene=19#wechat_redirect)
+- [JavaScript高级程序语言设计：4.2 执行环境及作用域](https://www.ituring.com.cn/book/946)
 
 ## 变量在内存中的存放
 
-- ~~栈内存：~~
+- 栈内存：
   - 基本数据类型：存放变量名与变量（其字面量）
   - 引用数据类型：存放变量名与**地址指针**
-- ~~堆内存：~~地址指针指向的实际内容存放在`堆`中
+- 堆内存：地址指针指向的实际内容存放在`堆`中
 
 ## 变量对象与活动对象
 
@@ -36,7 +38,7 @@ VariableObject = {
    - 每找到一个变量声明，就在变量对象中<u>以变量名建立一个属性</u>，属性值为 **undefined**
    - 因此，才会出现 var 的变量提升现象
    - var 声明的变量与函数同名，以函数为准
-   - let/const 声明的变量，仍然会提前被收集到变量对象中，但不会赋值为 undefined
+   - **let/const 声明的变量**，仍然会提前被收集到变量对象中，但不会赋值为 undefined
 
 ### 活动对象 Active Object
 
@@ -85,6 +87,9 @@ example(5);
 - 当**调用**一个`函数`时，一个`新的执行上下文`就会被创建
 - 每个执行上下文都有一个与之关联的`变量对象`
 
+> 每个函数都有自己的执行上下文。当执行流进入一个函数时，该函数的执行上下文就会被推入执行上下文栈中。而在函数执行后，栈将其执行上下文弹出栈，把控制权返回给之前的执行上下文。ECMAScript程序中的执行流，正是由这个翻遍的机制控制着。
+>		—— 《JavaScript高级程序语言设计（第三版）》
+
 ## 执行上下文的生命周期
 
 ### 1. 创建阶段
@@ -113,10 +118,17 @@ example(5);
 ## 作用域
 
 - 作用域规定了如何查找变量，也就是确定当前执行代码对**变量**的**访问权限**
+- 可以理解为自身执行上下文中的`活动对象`可以被访问的区域
 
-## 作用域链
+> 其实执行函数的时候，用到的变量值，都是从**活动对象**上面取到的，如果自己的执行上下文中的**活动对象**没有对应要用的值，那就要往上一层的执行上下文中的**活动对象**中找这个值……
+
+## 作用域链 scopeChain
 
 - 用途：保证对`执行上下文`有权访问的所有变量和函数的有序访问
-- 作用域链的前端，始终都是当前执行的代码，所在环境的`变量对象`
+- 作用域链是由<u>当前环境</u>与<u>上层环境</u>的一系列`变量对象`组成
+- 作用域链的前端，始终都是当前执行的代码，所在环境的活动对象作为`变量对象`
 - `全局执行上下文`的变量对象，始终都是作用域链的最后一个对象
 
+- 延长作用域链
+  - try-catch语句的catch块
+  - with语句
