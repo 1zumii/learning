@@ -31,7 +31,6 @@ f.__proto__ === Foo.prototype;	// true
 ```
 
 > f.\_\_proto__ === Foo().prototype
->
 > \>\>> Uncaught TypeError: Cannot read property 'prototype' of undefined
 >
 > 这是因为 Foo 是函数对象，Foo() 是在调用这个函数
