@@ -1,3 +1,4 @@
+- [JS基础进阶：1. 内存空间详细图解](https://mp.weixin.qq.com/s?__biz=MzI4NjE3MzQzNg==&mid=2649865899&idx=1&sn=78a092708828a61ac1c99388e9f7d998&scene=19#wechat_redirect)
 - [关于javascript中的从堆栈内存到执行上下文](https://github.com/ershing/RookieAngle/blob/master/javascript/executionContext.md)
 - [JS基础进阶：2. 详解执行上下文](https://mp.weixin.qq.com/s?__biz=MzI4NjE3MzQzNg==&mid=2649865900&idx=1&sn=a8fefbc436283b638eaeba1d7bd8496d&scene=19#wechat_redirect)
 - [关于javascript中的变量对象和活动对象](https://github.com/ershing/RookieAngle/blob/master/javascript/javascriptVariableObject.md)
