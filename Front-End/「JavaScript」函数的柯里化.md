@@ -1,0 +1,108 @@
+- [柯里化与反柯里化 - 掘金](https://juejin.im/post/6844903645222273037)
+
+- [JS基础进阶：10. 详解函数柯里化](https://mp.weixin.qq.com/s?__biz=MzI4NjE3MzQzNg==&mid=2649865953&idx=1&sn=e6a267d74c7e3053433e73c7cdbece7d&scene=19#wechat_redirect)
+
+## 柯里化
+
+提前接收部分参数，延迟执行，不立即输出结果，而是返回一个接受剩余参数的函数。
+
+### Example 1 空参数时调用
+
+```javascript
+function currying(fn){
+    var allArgs = [];
+
+    return function next(){
+        var args = [].slice.call(arguments);
+
+        if(args.length > 0){
+            allArgs = allArgs.concat(args);
+            return next;
+        }else{
+            return fn.apply(null, allArgs);
+        }
+    } 
+}
+var add = currying(function(){
+    var sum = 0;
+    for(var i = 0; i < arguments.length; i++){
+        sum += arguments[i];
+    }
+    return sum;
+});
+
+add(1)(2, 3)(4)() // 10
+```
+
+- 传入参数时，代码不执行输出结果，而是先记忆起来 *line 2*
+- 当传入空的参数时，代表可以进行真正的运算 *line 10*
+- `[].slice.call(arguments)` *line 5*
+  - 作用是将此次接收到的实参保存到闭包的 allArgs 变量中
+  - `arguments`为类数组无法直接并入，因此需要将其转成数组
+  - 等同于：`Array.prototype.slice.call(arguments)`，`Array.from(arguments)`
+- next 中的每一次操作最后都需要返回一个函数，以便下一次调用 *line9/11*
+
+### Example 2 实参数量达到形参数时调用
+
+```javascript
+function createCurry(func, args) {
+    var arity = func.length;
+    var args = args || [];
+
+    return function() {
+        var _args = [].slice.call(arguments);
+        [].push.apply(_args, args);
+
+        // 如果参数个数小于最初的func.length，则递归调用，继续收集参数
+        if (_args.length < arity) {
+            return createCurry.call(this, func, _args);
+        }
+
+        // 参数收集完毕，则执行func
+        return func.apply(this, _args);
+    }
+}
+```
+
+- func 为需要柯里化的函数，其中包含形参
+- `func.length`指明函数的形参个数
+
+### Example 3 无限参数的柯里化
+
+```javascript
+// 实现一个add方法，使计算结果能够满足如下预期：
+add(1)(2)(3) = 6;
+add(1, 2, 3)(4) = 10;
+add(1)(2)(3)(4)(5) = 15;
+```
+
+> 利用函数的隐式转换
+> - 当我们直接将函数参与其他的计算时，函数会默认调用toString方法，直接将函数体转换为字符串参与计算
+> - 重写 toString 以外，重写函数的 valueOf 法也能够改变函数的隐式转换结果
+
+```javascript
+
+function add() {
+    // 第一次执行时，定义一个数组专门用来存储所有的参数
+    var _args = [].slice.call(arguments);
+
+    // 在内部声明一个函数，利用闭包的特性保存_args并收集所有的参数值
+    var adder = function () {
+        var _adder = function() {
+            _args.push(...arguments);
+            return _adder;
+        };
+
+        // 利用隐式转换的特性，当最后执行时隐式转换，并计算最终的值返回
+        _adder.toString = function () {
+            return _args.reduce(function (a, b) {
+                return a + b;
+            });
+        }
+
+        return _adder;
+    }
+    return adder(..._args);
+}
+```
+
