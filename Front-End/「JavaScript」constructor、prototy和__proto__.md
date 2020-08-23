@@ -35,6 +35,24 @@ f.__proto__ === Foo.prototype;	// true
 >
 > 这是因为 Foo 是函数对象，Foo() 是在调用这个函数
 
+```javascript
+function Foo() {
+	console.log(this)
+}
+f1 = new Foo()
+f2 = new Foo()
+f1.__proto__.kkk = 1
+console.log(f1.__proto__)
+console.log(f2.__proto__)
+console.log(Foo.prototype)
+```
+
+> Foo {}
+> Foo {}
+> { kkk: 1 }
+> { kkk: 1 }
+> { kkk: 1 }
+
 ## constructor
 
 - 指向该对象的`构造函数`

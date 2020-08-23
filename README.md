@@ -39,6 +39,7 @@
 - [JavaScript - 变量对象、执行上下文和作用域链](Front-End/「JavaScript」变量对象、执行上下文和作用域链.md)
 - [JavaScript - 异步与Promise](Front-End/「JavaScript」异步与Promise.md)
 - [JavaScript - 操作DOM](Front-End/「JavaScript」操作DOM.md)
+- [JavaScript - 模块Module](Front-End/「JavaScript」模块Module.md)
 - [JavaScript - 类型转换特殊情况](Front-End/「JavaScript」类型转换特殊情况.md)
 - [JavaScript - 通知栏（不重叠显示）](Front-End/「JavaScript」通知栏（不重叠显示）.md)
 - [JavaScript - 闭包与变量提升](Front-End/「JavaScript」闭包与变量提升.md)
