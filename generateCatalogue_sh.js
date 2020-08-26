@@ -14,9 +14,11 @@ fs.readdir('./', (err, directories) => {
 			fs.readdirSync(dir).forEach(file => {
 				const reg = /^「(.+)」(.+)\.md$/
 				const matchGroup = file.match(reg)
-				const tag = matchGroup[1]
-				const title = matchGroup[2]
-				writeContent += `- [${tag} - ${title}](${dir}/${file})\n`
+				if (matchGroup) {
+					const tag = matchGroup[1]
+					const title = matchGroup[2]
+					writeContent += `- [${tag} - ${title}](${dir}/${file})\n`
+				}
 			})
 		}
 	})
