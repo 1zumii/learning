@@ -3,7 +3,6 @@
 ### 1.1 函数对象和实例对象
 
 - 函数对象：将函数作为对象使用时
-
 - 实例对象：new 函数产生的对象，简称对象
 
 ```javascript
@@ -80,7 +79,6 @@ console.log('before setTimeout')
 #### 类型
 
 - Error -> 所有错误的父类型
-
 - ReferenceError
 - TypeError
 - RangeError
