@@ -35,7 +35,6 @@
 - [JavaScript - Proxy、Reflection和Symbol](Front-End/「JavaScript」Proxy、Reflection和Symbol.md)
 - [JavaScript - constructor、prototy和__proto__](Front-End/「JavaScript」constructor、prototy和__proto__.md)
 - [JavaScript - iterator与可迭代对象](Front-End/「JavaScript」iterator与可迭代对象.md)
-- [JavaScript - 函数的柯里化](Front-End/「JavaScript」函数的柯里化.md)
 - [JavaScript - 变量对象、执行上下文和作用域链](Front-End/「JavaScript」变量对象、执行上下文和作用域链.md)
 - [JavaScript - 异步与Promise](Front-End/「JavaScript」异步与Promise.md)
 - [JavaScript - 手写call、apply、bind](Front-End/「JavaScript」手写call、apply、bind.md)
@@ -54,6 +53,8 @@
 - [Webpack - 入门](Front-End/「Webpack」入门.md)
 - [Web - StorageAPI](Front-End/「Web」StorageAPI.md)
 - [Web - 跨域](Front-End/「Web」跨域.md)
+- [函数式编程 - 函数的柯里化](Front-End/「函数式编程」函数的柯里化.md)
+- [函数式编程 - 尾调用优化和尾递归优化](Front-End/「函数式编程」尾调用优化和尾递归优化.md)
 ## Java
 - [Else - JFrame和getContentPane()方法](Java/「Else」JFrame和getContentPane()方法.md)
 - [Else - 基于TCP的网络通信(ServerSocketSocket)](Java/「Else」基于TCP的网络通信(ServerSocketSocket).md)
