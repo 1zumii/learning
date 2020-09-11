@@ -67,6 +67,9 @@ Function.prototype.myBind = function(context) {
 }
 ```
 
+- [为什么连续bind只有第一次的绑定值生效 - 简书](https://www.jianshu.com/p/d3fa0c0fd4c7)
+- [Function.prototype.bind() - MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+
 ## 重点
 
 - 改变 this 的思路：将当前的函数，作为指定 this <u>对象的一个方法</u>来调用&nbsp;&nbsp;&nbsp;&nbsp;*myCall#13*

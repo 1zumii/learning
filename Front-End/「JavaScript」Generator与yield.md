@@ -60,7 +60,7 @@ for (let code of generatePasswordCodes()) {
 console.log(str) // 0..9A..Za..z
 ```
 
-## 双向的generator.next()
+## 双向的next()
 
 ### 1. 没有参数：获取generator的下一次的值
 
@@ -99,4 +99,8 @@ console.log('outside', g.next(2))
 > outside { value: null, done: false }
 > insides 2
 > outside { value: null, done: false }
+
+## generator.prototype.throw()
+
+## generator.prototype.return()
 
