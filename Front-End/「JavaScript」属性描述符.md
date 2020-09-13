@@ -1,4 +1,12 @@
-1. [属性标志和属性描述符](https://zh.javascript.info/property-descriptors)
+1. [属性标志和属性描述符 - JavaScript.info](https://zh.javascript.info/property-descriptors)
+2. [属性的 getter 和 setter - JavaScript.info](https://zh.javascript.info/property-accessors)
+3. [Object.defineProperty() - MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+
+## 属性描述符
+
+- `数据描述符`是一个具有值的属性，该值可以是可写的，也可以是不可写的
+- `存取描述符`是由 getter 函数和 setter 函数所描述的属性
+- 两种描述符共享的键值：configurable、enumerable
 
 ## 属性标志
 
@@ -106,4 +114,75 @@ console.log(2, Object.getOwnPropertyNames(user), 'Object.getOwnPropertyNames()')
 2 [ 'name' ] Object.keys()
 2 [ 'name', 'getName' ] Object.getOwnPropertyNames()
 ```
+
+### 不可配置 configurable
+
+- 不可配置`configurable:false`的属性**不能被删除**
+- 不能修改`configurable`标志
+- ~~不能修改`enumerable`标志~~
+- 能将`writable: false`修改为`true`，反之亦然）
+- 不能修改访问者属性的`get/set`，但是如果没有可以分配它们
+
+## 访问器属性
+
+- 本质上是用于获取和设置值的`函数`，但从<u>外部代码来看就像常规属性</u>
+- `访问器描述符`可能有：
+  - **`get`**：一个没有参数的<u>函数</u>，**在读取属性时**工作
+  - **`set`**：带有一个参数的<u>函数</u>，**当属性被设置时**调用
+  - **`enumerable`**：与数据属性的相同
+  - **`configurable`**：与数据属性的相同
+- 一个属性要么是访问器（具有 get/set 方法），要么是数据属性（具有 value），**但不能两者都是**
+
+### Getter/Setter
+
+```js
+let obj = {
+	get propName() {
+	// 当读取 obj.propName 时，getter 起作用
+	},
+	set propName(value) {
+	// 当执行 obj.propName = value 操作时，setter 起作用
+	}
+}
+```
+
+```js
+let user = {
+	name: "John",
+	surname: "Smith"
+}
+
+Object.defineProperty(user, 'fullName', {
+	get() {
+		return `${this.name} ${this.surname}`
+	},
+	set(value) {
+		[this.name, this.surname] = value.split(" ")
+	}
+})
+```
+
+### Getter/setter 可以用作「真实」属性值的包装器
+
+```js
+let user = {
+	get name() {
+		return this._name
+	},
+	set name(value) {
+		if (value.length < 4) {
+			alert("Name is too short, need at least 4 characters")
+			return
+		}
+		this._name = value
+	}
+}
+
+user.name = "Pete"
+alert(user.name)	// Pete
+
+user.name = ""		// Name 太短了……
+```
+
+> 众所周知的约定：以下划线 "_" 开头的属性是内部属性，不应该从对象外部进行访问。
 
