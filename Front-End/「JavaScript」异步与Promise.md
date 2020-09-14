@@ -524,3 +524,49 @@ const funcA = async params => {
 ```
 
 > 利用了 promise 的 executor 是立即执行异步操作的特性
+
+### async/await执行顺序
+
+```js
+async function async1() {
+    console.log('async1 start')
+    await async2()
+    console.log('async1 end')
+}
+
+async function async2() {
+    console.log('async2')
+}
+
+console.log('script start')
+
+setTimeout(function () {
+    console.log('setTimeout')
+}, 0)
+
+async1()
+
+new Promise(function (resolve) {
+    console.log('promise1')
+    resolve()
+}).then(function () {
+    console.log('promise2')
+})
+
+console.log('script end')
+```
+
+```bash
+script start
+async1 start
+async2
+promise1
+script end
+promise2
+async1 end
+setTimeout
+```
+
+- [async/await执行顺序面试题 - CSDN](https://blog.csdn.net/lixinyi0622/article/details/87308047)
+- [面试题 async/await - 掘金](https://juejin.im/post/6844903814659588110)
+
