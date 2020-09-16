@@ -569,4 +569,4 @@ setTimeout
 
 - [async/await执行顺序面试题 - CSDN](https://blog.csdn.net/lixinyi0622/article/details/87308047)
 - [面试题 async/await - 掘金](https://juejin.im/post/6844903814659588110)
-
+- 第3行 await 相当于开启了一个异步任务，async2 相当于 Promise 中的 executor，会立即执行。但是，第3行以后，相当于被挂起到了微队列中，类似于 then
