@@ -1,5 +1,5 @@
 - [原文：帮你彻底搞懂JS中的prototype、\_\_proto__与constructor](https://blog.csdn.net/cc18868876837/article/details/81211729)
-
+- [F.prototype](https://zh.javascript.info/function-prototype)
 - `__proto__`和`constructor`属性是**对象**所独有的
 - `prototype`属性是**函数**所独有的 *函数也是一种对象*
 
