@@ -81,3 +81,12 @@ function myInstanceOf(left, right) {
 }
 ```
 
+## 不推荐直接使用\_\_proto__
+
+> \_\_proto__ 被认为是过时且不推荐使用的（deprecated），这里的不推荐使用是指 JavaScript 规范中规定，**proto** 必须仅在浏览器环境下才能得到支持。
+
+现代的方法有：
+
+- Object.create(proto, \[descriptors\])：利用给定的 `proto` 作为 `[[Prototype]]` 和可选的属性描述来创建一个空对象。
+- Object.getPrototypeOf(obj)：返回对象 `obj` 的 `[[Prototype]]`。
+- Object.setPrototypeOf(obj, proto)：将对象 `obj` 的 `[[Prototype]]` 设置为 `proto`。
