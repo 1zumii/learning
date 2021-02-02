@@ -3,6 +3,7 @@
 3. [动态导入 - JavaScript.info](https://zh.javascript.info/modules-dynamic-imports)
 4. [Module 的语法 - 阮一峰](https://github.com/ruanyf/es6tutorial/blob/gh-pages/docs/module.md)
 5. [Module 的动态加载 - 阮一峰](https://github.com/ruanyf/es6tutorial/blob/gh-pages/docs/module-loader.md)
+6. [module.exports - Node.js](https://github.com/nodejs/node/blob/master/doc/api/modules.md#moduleexports)
 
 ## ES6 的模块
 
@@ -73,4 +74,52 @@ if (x === 1) {
 - `import(module)` 表达式加载模块并返回一个 promise
 - 该 promise 的 resolve 为一个包含其所有导出的模块对象
 - 动态导入在常规脚本中工作时，**不需要** \<script type="module">
+
+## Modules: CommonJS modules
+
+- 对`module.exports`属性的分配，不允许在任何 callback 中运行
+
+  - 正常运行
+
+  ```js
+  /* a.js */
+  const EventEmitter = require('events');
+  
+  module.exports = new EventEmitter();
+  
+  // Do some work, and after some time emit
+  // the 'ready' event from the module itself.
+  setTimeout(() => {
+    module.exports.emit('ready');
+  }, 1000);
+  
+  
+  /* run.js */
+  const a = require('./a');
+  a.on('ready', () => {
+    console.log('module "a" is ready');
+  });
+  ```
+
+  - 错误示范
+  ```js
+  /* x.js */
+  setTimeout(() => {
+    module.exports = { a: 'hello' };
+  }, 0);
+  /* y.js */
+  const x = require('./x');
+  console.log(x.a);	// undefined
+  ```
+
+- `module.exports.f = ...`可以简写为`exports.f = ...`
+
+- 如果给`exports`赋予新的值，则其不再绑定在`module.exports`上
+
+  ```js
+  module.exports.hello = true; // Exported from require of module
+  exports = { hello: false };  // Not exported, only available in the module
+  ```
+  
+- 当`module.exports`属性被完全的赋值了一个新的对象，`exports`也会被重新赋值
 
