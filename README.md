@@ -36,6 +36,7 @@
 - [JavaScript - Proxy、Reflection和Symbol](Front-End/「JavaScript」Proxy、Reflection和Symbol.md)
 - [JavaScript - constructor、prototy和__proto__](Front-End/「JavaScript」constructor、prototy和__proto__.md)
 - [JavaScript - iterator与可迭代对象](Front-End/「JavaScript」iterator与可迭代对象.md)
+- [JavaScript - 使用类字段制作绑定方法](Front-End/「JavaScript」使用类字段制作绑定方法.md)
 - [JavaScript - 变量对象、执行上下文和作用域链](Front-End/「JavaScript」变量对象、执行上下文和作用域链.md)
 - [JavaScript - 属性描述符](Front-End/「JavaScript」属性描述符.md)
 - [JavaScript - 异步与Promise](Front-End/「JavaScript」异步与Promise.md)
