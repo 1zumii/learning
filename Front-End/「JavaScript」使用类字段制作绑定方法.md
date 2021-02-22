@@ -52,7 +52,7 @@ setTimeout(button2.click, 1000); // hello
 }
 /* button2 */
 {
- 	value: <Number>,
+    value: <Number>,
     __proto__: {
         click: <Function>,
         constructor: class Button2,
