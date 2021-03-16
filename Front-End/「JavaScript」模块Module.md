@@ -5,6 +5,7 @@
 5. [Module 的动态加载 - 阮一峰](https://github.com/ruanyf/es6tutorial/blob/gh-pages/docs/module-loader.md)
 6. [module.exports - Node.js](https://github.com/nodejs/node/blob/master/doc/api/modules.md#moduleexports)
 7. [AMD 规范](https://zhaoda.net/webpack-handbook/amd.html)
+8. [Node.js如何处理ES6模块 - 阮一峰](https://www.ruanyifeng.com/blog/2020/08/how-nodejs-use-es6-module.html)
 
 ## ES6 的模块
 
@@ -136,5 +137,10 @@ if (x === 1) {
   define(id?: String, dependencies?: String[], factory: Function|Object);
   ```
 
-  
+## ES6模块与CommonJS模块
+
+在 Node.js 中
+- `.mjs`文件总是以 ES6 模块加载
+- `.cjs`文件总是以 CommonJS 模块加载
+- `.js`文件的加载取决于`package.json`里面`type`字段的设置
 

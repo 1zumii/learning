@@ -43,19 +43,19 @@ setTimeout(button2.click, 1000); // hello
 ```js
 /* button1 */
 {
-    click: <Function>,
     value: <Number>,
     __proto__: {
-        constructor: class Button1,
+        click: <Function>,
+        constructor: class Button2,
         __proto__: <Object>
     }
 }
 /* button2 */
 {
+    click: <Function>,
     value: <Number>,
     __proto__: {
-        click: <Function>,
-        constructor: class Button2,
+        constructor: class Button1,
         __proto__: <Object>
     }
 }
