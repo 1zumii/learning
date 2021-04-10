@@ -670,7 +670,7 @@ div {
 
 ## 23. H5新标签
 
-- [使用 HTML 章节与大纲 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document)
+- [HTML 元素参考 - MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element)
 
 - \<video>：不适用插件的情况下，原生支持视频格式文件的播放
 - \<audio>：不适用插件的情况下，原生支持音频格式文件的播放
