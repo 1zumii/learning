@@ -699,19 +699,25 @@ div[foo|="bar"] {...}
 
 根据`文档结构`选择元素，常用于选择父级元素里的子元素
 
-| 选择器                                            | 作用                                                |
-| ------------------------------------------------- | --------------------------------------------------- |
-| E:first-child                                     | 第一个子元素                                        |
-| E:last-child                                      | 最后一个子元素                                      |
-| E:nth-child(<span style="color:green">n</span>)   | 第 <span style="color:green">n</span> 个子元素      |
-| E:first-of-type                                   | 指定元素E的第一个                                   |
-| E:last-of-type                                    | 指定元素E的最后一个                                 |
-| E:nth-of-type(<span style="color:green">n</span>) | 指定元素E的第 <span style="color:green">n</span> 个 |
+找到的都是当前元素的兄弟元素
+
+| 选择器                                                       | 作用                                                |
+| ------------------------------------------------------------ | --------------------------------------------------- |
+| [E:first-child](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:first-child) | 第一个子元素                                        |
+| E:last-child                                                 | 最后一个子元素                                      |
+| E:nth-child(<span style="color:green">n</span>)              | 第 <span style="color:green">n</span> 个子元素      |
+| E:first-of-type                                              | 指定元素E的第一个                                   |
+| [E:last-of-type](https://developer.mozilla.org/zh-CN/docs/Web/CSS/:last-of-type) | 指定元素E的最后一个                                 |
+| E:nth-of-type(<span style="color:green">n</span>)            | 指定元素E的第 <span style="color:green">n</span> 个 |
 
 - E:nth-child()
   - 数字
   - odd / even
   - 表达式：`-n+5`，前五个（n从0开始，超出的不存在的元素被忽略）
+
+#### 选择aaa，以nth-child的方式
+
+`nth-child()`前面可以不带具体元素，最好使用`>`子选择器限定范围
 
 ```html
 <body>
@@ -725,11 +731,13 @@ div[foo|="bar"] {...}
 
 ```css
 <style>
-    section:nth-child(1) {
+    section > :nth-child(1) {
         ...
     }
 </style>
 ```
+
+#### 选择aaa，以nth-of-type的方式
 
 ```html
 <body>
@@ -742,9 +750,11 @@ div[foo|="bar"] {...}
 ```
 
 ```css
-section div:nth-of-child(1) {
-    ...
-}
+<style>
+    section div:nth-of-child(1) {
+        ...
+    }
+</style>
 ```
 
 ## 26. 伪类选择器
