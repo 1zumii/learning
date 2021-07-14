@@ -99,8 +99,11 @@ $ adduser daddy
   找到  root ALL=(ALL) ALL ，在其下方添加如下任意一条
 
   > xxx	 ALL=(ALL)	ALL
+  > 
   > %xxx	ALL=(ALL)	ALL
+  > 
   > xxx	 ALL=(ALL)	NOPASSWD: ALL
+  > 
   > %xxx	ALL=(ALL)	NOPASSWD: ALL
 
 - 撤销`sudoers文件`写权限
